@@ -22,6 +22,7 @@ public class LayerResizer : UIBehaviour
     {
         if (isSelect)
         {
+            Layer.overlayActiveTime = 3;
             var scale = Camera.main.ScreenToWorldPoint(Input.mousePosition) * Layer.MouseSensitivity - lastMousePosition;
             Layer.Size += new Vector2(scale.x, scale.y) * Weight;
 

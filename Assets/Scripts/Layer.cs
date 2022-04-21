@@ -23,6 +23,9 @@ public class Layer : UIBehaviour
 
     public float MouseSensitivity = 85.0f;
 
+    public float overlayActiveTime = 3.0f;
+    
+    
     #region Properties
     
     public Vector2 Size
@@ -67,7 +70,14 @@ public class Layer : UIBehaviour
             rectTransform.localPosition -= new Vector3(0, 0, rectTransform.localPosition.z);
         }
 
-        DrawRectScaler(IsHovered);
+        if (IsHovered)
+        {
+            overlayActiveTime = 3;
+        }
+
+        DrawRectScaler(overlayActiveTime >= 0);
+
+        overlayActiveTime -= Time.deltaTime;
     }
 
     public void OnMouseDown()
