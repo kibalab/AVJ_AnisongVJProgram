@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Layer : UIBehaviour
 {
+    public RawImage LayerImage;
     public RectTransform rectTransform;
+    private BoxCollider2D collider;
+    
     private Outline OutlineEffect;
     private Vector2 clickedPosition;
 
@@ -18,20 +22,43 @@ public class Layer : UIBehaviour
     public bool IsHovered = false;
 
     public float MouseSensitivity = 85.0f;
+
+    #region Properties
+    
+    public Vector2 Size
+    {
+        set
+        {
+            collider.size = value;
+            rectTransform.sizeDelta = value;
+        }
+        get => rectTransform.sizeDelta;
+    }
+    
+    #endregion
     
     void Start()
     {
-        // Outline Component Vailed Check
-        OutlineEffect = GetComponent<Outline>();
-        if (!OutlineEffect)
-        {
-            OutlineEffect = gameObject.AddComponent<Outline>();
-        }
-
-        rectTransform = (RectTransform)transform; // UI used RectTransform
+        InitLayer();
     }
 
-    private void Update()
+    public void InitLayer()
+    {
+        // Outline Component Vailed Check
+        OutlineEffect = SetComponent<Outline>();
+        LayerImage = SetComponent<RawImage>();
+        collider = SetComponent<BoxCollider2D>();
+        
+        rectTransform = (RectTransform)transform; // UI used RectTransform
+
+        Size = rectTransform.sizeDelta;
+        
+        Debug.Log($"[Layer, {gameObject.name}] Initializing Layer");
+    }
+
+    #region Events
+
+    public void Update()
     {
         if (IsSelected)
         {
@@ -39,6 +66,8 @@ public class Layer : UIBehaviour
 
             rectTransform.localPosition -= new Vector3(0, 0, rectTransform.localPosition.z);
         }
+
+        DrawRectScaler(IsHovered);
     }
 
     public void OnMouseDown()
@@ -70,4 +99,26 @@ public class Layer : UIBehaviour
         Debug.Log("[Layer] MouseExit");
         IsHovered = false;
     }
+
+    #endregion
+
+    public void DrawRectScaler(bool b)
+    {
+        transform.GetChild(0).gameObject.SetActive(b);
+    }
+    
+    #region Utils
+
+    public T SetComponent<T>() where T : Component
+    {
+        Debug.Log($"[Layer, {gameObject.name}] Add Component : {typeof(T).Name}");
+        var component = GetComponent<T>();
+        if (component == null)
+        {
+            component = gameObject.AddComponent<T>();
+        }
+        return component;
+    }
+    
+    #endregion
 }
