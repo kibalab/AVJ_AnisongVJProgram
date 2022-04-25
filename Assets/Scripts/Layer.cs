@@ -36,6 +36,7 @@ public class Layer : UIBehaviour
         {
             collider.size = value;
             rectTransform.sizeDelta = value;
+            LayerImage.rectTransform.sizeDelta = value;
         }
         get => rectTransform.sizeDelta;
     }
@@ -45,15 +46,14 @@ public class Layer : UIBehaviour
     void Start()
     {
         InitLayer();
-        InitScaler();
     }
 
     public void InitLayer()
     {
         // Outline Component Vailed Check
-        OutlineEffect = SetComponent<Outline>();
-        LayerImage = SetComponent<RawImage>();
-        collider = SetComponent<BoxCollider2D>();
+        if (!OutlineEffect) OutlineEffect = SetComponent<Outline>();
+        if (!LayerImage) LayerImage = SetComponent<RawImage>();
+        if (!collider) collider = SetComponent<BoxCollider2D>();
         
         rectTransform = (RectTransform)transform; // UI used RectTransform
 
@@ -76,8 +76,12 @@ public class Layer : UIBehaviour
 
     public void Update()
     {
+        LayerImage.rectTransform.pivot = rectTransform.pivot;
+        LayerImage.rectTransform.localPosition = rectTransform.localPosition;
+        
         if (IsSelected)
         {
+            
             rectTransform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity + new Vector3(clickedPosition.x, clickedPosition.y, 0);
 
             rectTransform.localPosition -= new Vector3(0, 0, rectTransform.localPosition.z);

@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoLayer : Layer
