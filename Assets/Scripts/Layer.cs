@@ -24,6 +24,8 @@ public class Layer : UIBehaviour
     public float MouseSensitivity = 85.0f;
 
     public float overlayActiveTime = 3.0f;
+
+    public float SourceRatio = 1;
     
     
     #region Properties
@@ -43,6 +45,7 @@ public class Layer : UIBehaviour
     void Start()
     {
         InitLayer();
+        InitScaler();
     }
 
     public void InitLayer()
@@ -57,6 +60,16 @@ public class Layer : UIBehaviour
         Size = rectTransform.sizeDelta;
         
         Debug.Log($"[Layer, {gameObject.name}] Initializing Layer");
+    }
+
+    public void InitScaler()
+    {
+        var resizers = GetComponentsInChildren<LayerResizer>();
+
+        foreach (var vaResizer in resizers)
+        {
+            vaResizer.Layer = this;
+        }
     }
 
     #region Events
@@ -119,6 +132,12 @@ public class Layer : UIBehaviour
     
     #region Utils
 
+    public void ScalingToRatio(Vector2 Ratio)
+    {
+        SourceRatio = (Ratio.x / Ratio.y);
+        Size = new Vector2( SourceRatio * Size.x, Size.y);
+    }
+    
     public T SetComponent<T>() where T : Component
     {
         Debug.Log($"[Layer, {gameObject.name}] Add Component : {typeof(T).Name}");

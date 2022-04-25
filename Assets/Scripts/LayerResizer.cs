@@ -15,9 +15,40 @@ public class LayerResizer : UIBehaviour
     public Vector2 Weight;
 
     private bool isSelect = false;
+    private bool m_Alt = false;
+    private bool m_Ctrl = false;
 
     private Vector3 lastMousePosition;
 
+    public bool isAltMode
+    {
+        set
+        {
+            if (value)
+            {
+                SetPivot(new Vector2(0.5f, 0.5f));
+            }
+            else
+            {
+                SetPivot(Pivot);
+            }
+
+            m_Alt = value;
+        }
+
+        get => m_Alt;
+    }
+
+    public bool isCtrlMode
+    {
+        set
+        {
+            m_Ctrl = value;
+        }
+
+        get => m_Ctrl;
+    }
+    
     public void Update()
     {
         if (isSelect)
@@ -25,8 +56,12 @@ public class LayerResizer : UIBehaviour
             Layer.overlayActiveTime = 3;
             var scale = Camera.main.ScreenToWorldPoint(Input.mousePosition) * Layer.MouseSensitivity - lastMousePosition;
             Layer.Size += new Vector2(scale.x, scale.y) * Weight;
+            if (isCtrlMode) Layer.Size = new Vector2(Layer.Size.y * Layer.SourceRatio, Layer.Size.y);
 
             lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) * Layer.MouseSensitivity;
+
+            isAltMode = Input.GetKey(KeyCode.LeftAlt);
+            isCtrlMode = Input.GetKey(KeyCode.LeftControl);
         }
     }
 

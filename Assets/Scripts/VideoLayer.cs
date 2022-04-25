@@ -14,6 +14,7 @@ public class VideoLayer : Layer
     protected override void Start()
     {
         InitLayer(); // Layer Initialize Codes
+        InitScaler();
         InitPlayer();
         PlayClip(media);
     }
@@ -32,10 +33,10 @@ public class VideoLayer : Layer
         player.clip = media;
         player.Play();
         Debug.Log($"[VideoLayer] Size Ratio : ({media.width}, {media.height})");
-        ScalingToRatio(new Vector2(media.width, media.height));
-    }
 
-    public void ScalingToRatio(Vector2 Ratio) => Size = new Vector2((Ratio.x / Ratio.y) * Size.x, Size.y);
+        ScalingToRatio(new Vector2(media.width, media.height));
+        
+    }
 
     public void Update()
     {
