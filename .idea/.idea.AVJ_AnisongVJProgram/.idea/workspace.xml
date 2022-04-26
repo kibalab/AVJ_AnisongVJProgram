@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commit Scene, Workspace">
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TimeLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TimeLine.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/ImageLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Timeline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -102,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650519221037</updated>
       <workItem from="1650519226264" duration="16176000" />
-      <workItem from="1650874826522" duration="20988000" />
+      <workItem from="1650874826522" duration="23827000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -223,7 +226,28 @@
       <option name="project" value="LOCAL" />
       <updated>1650937979028</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add Timeline Instantiator">
+      <created>1650939582016</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1650939582016</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Commit Scene, workspace">
+      <created>1650939596607</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1650939596607</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Commit Used Files meta data">
+      <created>1650939710320</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1650939710320</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +283,9 @@
     <MESSAGE value="Add Drag&amp;Drop(Use Bunny83's Script), Only worked Video Import&#10;Bunny83's repo : https://github.com/Bunny83/UnityWindowsFileDrag-Drop" />
     <MESSAGE value="Add Image Import" />
     <MESSAGE value="Commit Scene, Workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Scene, Workspace" />
+    <MESSAGE value="Add Timeline Instantiator" />
+    <MESSAGE value="Commit Scene, workspace" />
+    <MESSAGE value="Commit Used Files meta data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Used Files meta data" />
   </component>
 </project>

@@ -22,10 +22,7 @@ public class LayerManager : MonoBehaviour
     
     public GameObject LayerPrefab;
     public GameObject TimelinePrefab;
-    
-    private List<Layer> Layers = new List<Layer>();
 
-    public Layer[] GetLayers { get => Layers.ToArray(); }
 
     public Layer AddLayer<T>(string name, string path) where T : Layer
     {
@@ -43,8 +40,6 @@ public class LayerManager : MonoBehaviour
 
         if (typeof(T) == typeof(VideoLayer)) AddedLayer.media = path;
         else AddedLayer.media = LoadImage(path);
-        
-        Layers.Add(AddedLayer);
 
         var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
         timeline.GetComponent<Timeline>().layer = AddedLayer;
@@ -90,5 +85,21 @@ public class LayerManager : MonoBehaviour
 
         return texture;
     }
-    
+
+    private void LateUpdate()
+    {
+        if(EventManager.Events.Count <= 0) return;
+        
+        var layerEvent = EventManager.Events.Dequeue();
+
+        switch (layerEvent.EventType)
+        {
+            case LayerEventType.Delete :
+                Destroy(layerEvent.layer.gameObject);
+                break;
+            default:
+                Debug.Log("[LayerManagher] Can not run for event");
+                break;
+        }
+    }
 }
