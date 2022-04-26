@@ -2417,7 +2417,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LayerField: {fileID: 1810092785}
   RenderField: {fileID: 1053166664}
+  TimelineField: {fileID: 1808413778}
   LayerPrefab: {fileID: 1421859022196136059, guid: 03885cfbba0075147acacfdb338a8b3d,
+    type: 3}
+  TimelinePrefab: {fileID: 1303820654474327991, guid: 0e67dd64ecbd8104e86bbf175d6257f6,
     type: 3}
 --- !u!4 &704457206
 Transform:
@@ -5484,40 +5487,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592460657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: f756db46dd9d7d346ba92c0793fcac52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1592460660}
-  m_OnClick:
+  LayerImage: {fileID: 0}
+  rectTransform: {fileID: 0}
+  ClickedColor: {r: 0.6698113, g: 0.15481488, b: 0.15481488, a: 1}
+  HoveredColor: {r: 0.8962264, g: 0.20714669, b: 0.20714669, a: 1}
+  OriginColor: {r: 0.83137256, g: 0.18431373, b: 0.18431373, a: 1}
+  OnClick:
     m_PersistentCalls:
       m_Calls: []
+  isClicked: 0
 --- !u!114 &1592460660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6378,13 +6359,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1779132985}
   - component: {fileID: 1779132986}
+  - component: {fileID: 1779132987}
   m_Layer: 5
   m_Name: TimeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1779132985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6401,10 +6383,10 @@ RectTransform:
   m_Father: {fileID: 1808413779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 65.06894}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 636.1912, y: -19.59777}
+  m_SizeDelta: {x: 1272.3824, y: 39.19554}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1779132986
 CanvasRenderer:
@@ -6414,6 +6396,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779132984}
   m_CullTransparentMesh: 0
+--- !u!114 &1779132987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779132984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85c9445e607b6d4d9edb71e18c3e492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: {fileID: 0}
+  Title: {fileID: 1704268738}
+  line: {fileID: 412919695}
 --- !u!1 &1808413778
 GameObject:
   m_ObjectHideFlags: 0
