@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class Layer : UIBehaviour
 {
@@ -26,6 +27,8 @@ public class Layer : UIBehaviour
     public float overlayActiveTime = 3.0f;
 
     public float SourceRatio = 1;
+    
+    public Object media;
     
     
     #region Properties
