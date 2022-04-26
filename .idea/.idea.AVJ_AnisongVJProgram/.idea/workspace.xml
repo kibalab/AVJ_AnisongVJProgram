@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Add Image View in Timeline.cs">
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commit Scene, workspace">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TimeLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TimeLine.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650519221037</updated>
       <workItem from="1650519226264" duration="16176000" />
-      <workItem from="1650874826522" duration="40763000" />
+      <workItem from="1650874826522" duration="42087000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -275,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650986511623</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fix TimeLine Prefab for list">
+      <created>1650989019726</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1650989019726</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Commit Scene, workspace">
+      <created>1650989031922</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1650989031922</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,12 +327,13 @@
     <MESSAGE value="Add Image Import" />
     <MESSAGE value="Commit Scene, Workspace" />
     <MESSAGE value="Add Timeline Instantiator" />
-    <MESSAGE value="Commit Scene, workspace" />
     <MESSAGE value="Commit Used Files meta data" />
     <MESSAGE value="Fix Button Event Component, Add LayerEvent" />
     <MESSAGE value="Commit workspace" />
     <MESSAGE value="Add Drag&amp;Drop Move list at Timeline.cs" />
     <MESSAGE value="Add Image View in Timeline.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Image View in Timeline.cs" />
+    <MESSAGE value="Fix TimeLine Prefab for list" />
+    <MESSAGE value="Commit Scene, workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Scene, workspace" />
   </component>
 </project>

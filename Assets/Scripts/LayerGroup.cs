@@ -1,40 +1,44 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-public class Timeline : Layer
+public class LayerGroup : Layer
 {
-    public Layer layer;
-
     public LayoutElement LayoutController;
 
     public Text Title;
-    public RawImage line;
-
-    public RawImage View;
-
+    public Text Footer;
     public Vector3 lastPos;
     
-    // Start is called before the first frame update
+    private List<Layer> memberLayers = new List<Layer>();
+
+    public GameObject MemberView;
+
+    public void ToggleFold() => MemberView.SetActive(!MemberView.activeSelf);
+    
     void Start()
     {
-        Title.text = $"[{layer.Type.ToString()}] {layer.gameObject.name}";
+        Title.text = $"[Group] {gameObject.name}";
+        Footer.text = Title.text;
         InitLayer(false);
-        DrawLine();
         LayoutController = SetComponent<LayoutElement>();
-        
-        if (layer.Type == LayerType.Image && LayerImage)
-        {
-            View.texture = (Texture2D)layer.media;
-        }
+        LayerImage.color = Color.clear;
     }
-
-    public void DrawLine()
+    
+    public void Add(Layer layer)
     {
+        layer.Group = this;
     }
 
+    public void Ignore(Layer layer)
+    {
+        var index = memberLayers.FindIndex(0, x => x.Equals(layer));
+        
+        memberLayers.RemoveAt(index);
+    }
+    
     public void OnMouseDown()
     {
         base.OnMouseDown();
@@ -57,9 +61,10 @@ public class Timeline : Layer
         blank.SetSiblingIndex(rectTransform.parent.childCount);
         blank.GetComponent<LayoutElement>().ignoreLayout = true;
         LayoutController.ignoreLayout = false;
-        
+        /*
         layer.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
         layer.LayerImage.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
+        */
     }
 
     private void OnMouseDrag()
@@ -90,29 +95,12 @@ public class Timeline : Layer
         return rectTransform.parent.childCount;
     }
 
-    public void DeleteLayer()
+    public void DeleteGroup()
     {
-        var layerEvent = new LayerEvent();
-        layerEvent.EventType = LayerEventType.Delete;
-        layerEvent.layer = layer;
-        
-        EventManager.Events.Enqueue(layerEvent);
-        
-        Destroy(gameObject);
     }
 
-    private void Update()
-    {
-        base.Update();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         overlayActiveTime = 3;
-        if(layer) if (layer.Type == LayerType.Video && LayerImage)
-        {
-            View.texture = layer.LayerImage.texture;
-        }
     }
 }
