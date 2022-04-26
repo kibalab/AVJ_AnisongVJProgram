@@ -31,6 +31,8 @@ public class Layer : UIBehaviour
     public float SourceRatio = 1;
     
     public object media;
+
+    public LayerGroup Group = null;
     
     
     #region Properties
@@ -50,10 +52,10 @@ public class Layer : UIBehaviour
     
     void Start()
     {
-        InitLayer();
+        InitLayer(true);
     }
 
-    public void InitLayer()
+    public void InitLayer(bool ResizeCollider)
     {
         // Outline Component Vailed Check
         if (!OutlineEffect) OutlineEffect = SetComponent<Outline>();
@@ -62,7 +64,7 @@ public class Layer : UIBehaviour
         
         rectTransform = (RectTransform)transform; // UI used RectTransform
 
-        Size = rectTransform.sizeDelta;
+        if(ResizeCollider) Size = rectTransform.sizeDelta;
         
         Debug.Log($"[Layer, {gameObject.name}] Initializing Layer");
     }
@@ -91,9 +93,12 @@ public class Layer : UIBehaviour
 
     public void Update()
     {
-        LayerImage.rectTransform.pivot = rectTransform.pivot;
-        LayerImage.rectTransform.localPosition = rectTransform.localPosition;
-        
+        if (LayerImage)
+        {
+            LayerImage.rectTransform.pivot = rectTransform.pivot;
+            LayerImage.rectTransform.localPosition = rectTransform.localPosition;
+        }
+
         if (IsSelected)
         {
             
@@ -114,7 +119,6 @@ public class Layer : UIBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("[Layer] MouseDown");
         OutlineEffect.effectColor = Color.white;
         OutlineEffect.enabled = true;
         IsSelected = true;
@@ -123,7 +127,6 @@ public class Layer : UIBehaviour
 
     public void OnMouseUp()
     {
-        Debug.Log("[Layer] MouseUp");
         OutlineEffect.effectColor = Color.cyan;
         OutlineEffect.enabled = false;
         IsSelected = false;
@@ -132,13 +135,11 @@ public class Layer : UIBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("[Layer] MouseEnter");
         IsHovered = true;
     }
 
     private void OnMouseExit()
     {
-        Debug.Log("[Layer] MouseExit");
         IsHovered = false;
     }
 
@@ -170,7 +171,7 @@ public class Layer : UIBehaviour
 
     protected override void OnDestroy()
     {
-        Destroy(LayerImage);
+        Destroy(LayerImage.gameObject);
     }
 
     #endregion

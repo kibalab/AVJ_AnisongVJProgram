@@ -8,7 +8,7 @@ public class VideoLayer : Layer
     void Start()
     {
         Type = LayerType.Video;
-        InitLayer(); // Layer Initialize Codes
+        InitLayer(true); // Layer Initialize Codes
         InitScaler();
         InitPlayer();
         PlayClip((string)media);

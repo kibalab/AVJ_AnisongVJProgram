@@ -8,7 +8,7 @@ public class ImageLayer : Layer
     protected override void Start()
     {
         Type = LayerType.Image;
-        InitLayer(); // Layer Initialize Codes
+        InitLayer(true); // Layer Initialize Codes
         InitScaler();
         SetImage((Texture2D)media);
     }
