@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using B83.Win32;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Video;
-using Object = UnityEngine.Object;
 
-public enum MediaType
+public enum LayerType
 {
     Image,
-    Video
+    Video,
+    Layer
 }
 
 public class LayerManager : MonoBehaviour
@@ -25,7 +25,7 @@ public class LayerManager : MonoBehaviour
 
     public Layer[] GetLayers { get => Layers.ToArray(); }
 
-    public Layer AddLayer<T>(MediaType type, string name, object media) where T : Layer
+    public Layer AddLayer<T>(string name, string path) where T : Layer
     {
         var layerObject = Instantiate(LayerPrefab, LayerField.transform);
         var LayerScreen = Instantiate(new GameObject(), RenderField.transform);
@@ -37,9 +37,10 @@ public class LayerManager : MonoBehaviour
         var AddedLayer = layerObject.AddComponent<T>();;
 
         AddedLayer.LayerImage = LayerImage;
-        
-        
-        AddedLayer.media = media;
+
+
+        if (typeof(T) == typeof(VideoLayer)) AddedLayer.media = path;
+        else AddedLayer.media = LoadImage(path);
         
         Layers.Add(AddedLayer);
 
@@ -62,10 +63,27 @@ public class LayerManager : MonoBehaviour
                      aFiles.Aggregate((a, b) => a + "\n\t" + b);
         Debug.Log(str);
         
+        
         foreach (var afile in aFiles)
         {
-            AddLayer<VideoLayer>(MediaType.Video, afile, afile);
+            if(Path.GetExtension(afile) == ".mp4")
+                AddLayer<VideoLayer>(Path.GetFileName(afile), afile);
+            else
+                AddLayer<ImageLayer>(Path.GetFileName(afile), afile);
         }
+    }
+    
+    private Texture2D LoadImage(string path)
+
+    {
+
+        byte[] byteTexture = System.IO.File.ReadAllBytes(path);
+
+        Texture2D texture = new Texture2D(0, 0);
+
+        texture.LoadImage(byteTexture);
+
+        return texture;
     }
     
 }

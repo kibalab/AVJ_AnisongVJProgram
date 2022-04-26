@@ -10,6 +10,8 @@ using Object = UnityEngine.Object;
 
 public class Layer : UIBehaviour
 {
+    public LayerType Type = LayerType.Layer;
+    
     public RawImage LayerImage;
     public RectTransform rectTransform;
     private BoxCollider2D collider;
@@ -72,6 +74,16 @@ public class Layer : UIBehaviour
         foreach (var vaResizer in resizers)
         {
             vaResizer.Layer = this;
+        }
+        
+        var texts = GetComponentsInChildren<Text>();
+
+        foreach (var text in texts)
+        {
+            if (text.gameObject.name == "Title")
+            {
+                text.text = $"[{Type.ToString()}] {gameObject.name}";
+            }
         }
     }
 

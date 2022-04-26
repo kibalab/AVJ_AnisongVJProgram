@@ -7,6 +7,7 @@ public class ImageLayer : Layer
     // Start is called before the first frame update
     protected override void Start()
     {
+        Type = LayerType.Image;
         InitLayer(); // Layer Initialize Codes
         InitScaler();
         SetImage((Texture2D)media);
