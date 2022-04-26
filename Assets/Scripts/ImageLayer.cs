@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ImageLayer : Layer
 {
-    public Texture2D media;
     // Start is called before the first frame update
     protected override void Start()
     {
         InitLayer(); // Layer Initialize Codes
         InitScaler();
-        SetImage(media);
+        SetImage((Texture2D)media);
     }
 
     public void SetImage(Texture2D media)

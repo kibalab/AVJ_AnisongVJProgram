@@ -28,7 +28,7 @@ public class Layer : UIBehaviour
 
     public float SourceRatio = 1;
     
-    public Object media;
+    public object media;
     
     
     #region Properties

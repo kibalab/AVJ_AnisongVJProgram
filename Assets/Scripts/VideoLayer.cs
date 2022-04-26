@@ -4,14 +4,13 @@ using UnityEngine.Video;
 public class VideoLayer : Layer
 {
     public VideoPlayer player;
-    public VideoClip media;
 
-    protected override void Start()
+    void Start()
     {
         InitLayer(); // Layer Initialize Codes
         InitScaler();
         InitPlayer();
-        PlayClip(media);
+        PlayClip((string)media);
     }
 
     public void InitPlayer()
@@ -22,15 +21,20 @@ public class VideoLayer : Layer
         player.isLooping = true;
     }
 
-    public void PlayClip(VideoClip media)
+    public void PlayClip(string media)
     {
         this.media = media;
-        player.clip = media;
+        player.source = VideoSource.Url;
+        player.url = media;
         player.Play();
-        Debug.Log($"[VideoLayer] Size Ratio : ({media.width}, {media.height})");
 
-        ScalingToRatio(new Vector2(media.width, media.height));
-        
+        player.started += StartVideo;
+    }
+
+    public void StartVideo(VideoPlayer source)
+    {
+        Debug.Log($"[VideoLayer] Size Ratio : ({source.texture.width}, {source.texture.height})");
+        ScalingToRatio(new Vector2(source.texture.width, source.texture.height));
     }
 
     public void Update()
@@ -41,6 +45,7 @@ public class VideoLayer : Layer
         {
             LayerImage.texture = player.texture;
             LayerImage.color = Color.white;
+            
         }
         else
         {
