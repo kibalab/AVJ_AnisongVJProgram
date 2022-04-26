@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commit ImageLayer.cs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +23,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerResizer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,6 +53,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\AVJ_AnisongVJProgram.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\Unity\AVJ_AnisongVJProgram\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -83,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650519221037</updated>
       <workItem from="1650519226264" duration="16176000" />
+      <workItem from="1650874826522" duration="15438000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -133,7 +142,28 @@
       <option name="project" value="LOCAL" />
       <updated>1650535337241</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Set Scaler Auto Initializing, Add Ratio ScalerMode&amp; longitudinal and horizontal ScalerMode">
+      <created>1650879391095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650879391095</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add Window.cs, ImageLayer.cs, Splite Render Screen &amp; Control UI">
+      <created>1650901198093</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650901198093</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commit ImageLayer.cs">
+      <created>1650902209528</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650902209528</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +191,9 @@
     <MESSAGE value="Add Resize Controller &amp; Pivot Resiz system" />
     <MESSAGE value="Commit Scene" />
     <MESSAGE value="Add Overlay View Timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Overlay View Timer" />
+    <MESSAGE value="Set Scaler Auto Initializing, Add Ratio ScalerMode&amp; longitudinal and horizontal ScalerMode" />
+    <MESSAGE value="Add Window.cs, ImageLayer.cs, Splite Render Screen &amp; Control UI" />
+    <MESSAGE value="Commit ImageLayer.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit ImageLayer.cs" />
   </component>
 </project>
