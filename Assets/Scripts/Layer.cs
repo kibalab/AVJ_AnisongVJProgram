@@ -167,6 +167,11 @@ public class Layer : UIBehaviour
         }
         return component;
     }
-    
+
+    protected override void OnDestroy()
+    {
+        Destroy(LayerImage);
+    }
+
     #endregion
 }

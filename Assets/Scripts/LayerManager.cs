@@ -18,8 +18,10 @@ public class LayerManager : MonoBehaviour
 {
     public GameObject LayerField;
     public GameObject RenderField;
+    public GameObject TimelineField;
     
     public GameObject LayerPrefab;
+    public GameObject TimelinePrefab;
     
     private List<Layer> Layers = new List<Layer>();
 
@@ -43,6 +45,9 @@ public class LayerManager : MonoBehaviour
         else AddedLayer.media = LoadImage(path);
         
         Layers.Add(AddedLayer);
+
+        var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
+        timeline.GetComponent<Timeline>().layer = AddedLayer;
 
         return AddedLayer;
     }
