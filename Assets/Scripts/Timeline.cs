@@ -24,6 +24,11 @@ public class Timeline : Layer
         InitLayer(false);
         DrawLine();
         LayoutController = SetComponent<LayoutElement>();
+        
+        if (layer.Type == LayerType.Image && LayerImage)
+        {
+            View.texture = (Texture2D)layer.media;
+        }
     }
 
     public void DrawLine()
