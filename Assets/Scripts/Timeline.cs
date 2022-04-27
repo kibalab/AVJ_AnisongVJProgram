@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AVJ;
 using AVJ.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,7 +45,7 @@ public class Timeline : InterectableUI, IUIInitializer
 
     public override void OnUIDrag(IDragDropHandler UIConponent)
     {
-
+        UIControl.CurrentSelected = this;
         LayoutController.ignoreLayout = true;
         var blank = rectTransform.parent.Find("Blank");
         blank.SetSiblingIndex(rectTransform.GetSiblingIndex());
@@ -56,7 +57,7 @@ public class Timeline : InterectableUI, IUIInitializer
 
     public override void OnUIDrop(IDragDropHandler UIConponent)
     {
-        
+        UIControl.CurrentSelected = null;
         var blank = rectTransform.parent.Find("Blank");
         rectTransform.SetSiblingIndex(blank.GetSiblingIndex());
         blank.SetSiblingIndex(rectTransform.parent.childCount);
@@ -107,11 +108,26 @@ public class Timeline : InterectableUI, IUIInitializer
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if(layer) if (layer.Type == LayerType.Video && UIObject)
         {
             View.texture = ((RawImage)((VideoLayer)layer).UIObject).texture;
+        }
+
+        if (IsSelected)
+        {
+            var targetGroup = UIControl.HoveredUIs.Find(x => 
+                { return x.GetType() == typeof(TimelineGroup); }) as TimelineGroup;
+
+            if (layer) // 그룹안에 그룹을 생각하여 예외처리함
+            {
+                if (layer.Group && targetGroup != layer.Group) layer.Group.Ignore(this);
+
+                layer.Group = targetGroup;
+            }
+
+            if (targetGroup)targetGroup.Add(this);
         }
     }
 }

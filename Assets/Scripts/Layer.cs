@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AVJ;
 using AVJ.UIElements;
 using UnityEditor;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class Layer : InterectableUI, IUIInitializer
     
     public object media;
 
-    public LayerGroup Group = null;
+    public TimelineGroup Group = null;
     
     
 

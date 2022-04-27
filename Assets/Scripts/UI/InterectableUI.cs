@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using AVJ;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -31,6 +33,7 @@ namespace AVJ.UIElements
         {
             set
             {
+                Debug.Log(value);
                 ((BoxCollider2D)collider).size = value;
                 rectTransform.sizeDelta = value;
                 UIObject.rectTransform.sizeDelta = value;
@@ -50,27 +53,42 @@ namespace AVJ.UIElements
         private void OnMouseDown()
         {
             IsSelected = true;
+            collider.enabled = false;
             Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             clickedPosition = rectTransform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity;
+            
             OnUIDrag(this);
         }
 
         private void OnMouseUp()
         {
             IsSelected = false;
+            collider.enabled = true;
             clickedPosition = new Vector2(0, 0);
             OnUIDrop(this);
         }
 
-        public void OnMouseEnter()
+        private void OnMouseEnter()
         {
             IsHovered = true;
+            UIControl.HoveredUIs.Add(this);
+            OnUIEnter();
         }
 
-        public void OnMouseExit()
+        private void OnMouseExit()
         {
             IsHovered = false;
+            UIControl.HoveredUIs.Remove(this);
+            OnUIExit();
         }
+
+        private void OnUIDropOnSelf(InterectableUI UIComponent)
+        {
+            
+        }
+
+        public virtual void OnUIEnter() { }
+        public virtual void OnUIExit() { }
 
         #region Interface Methods
 

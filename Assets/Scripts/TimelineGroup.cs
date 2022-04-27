@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using AVJ;
 using AVJ.UIElements;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-public class LayerGroup : Layer
+public class TimelineGroup : Timeline
 {
-    public LayoutElement LayoutController;
-
-    public Text Title;
+    public Transform FooterLine;
     public Text Footer;
-    public Vector3 lastPos;
     
-    private List<Layer> memberLayers = new List<Layer>();
+    private List<Timeline> memberTimeline = new List<Timeline>();
+    
+    public Vector2 InitializScale = Vector2.zero;
 
     public GameObject MemberView;
+
+    public LayoutElement Blank;
 
     public void ToggleFold() => MemberView.SetActive(!MemberView.activeSelf);
     
@@ -23,21 +27,49 @@ public class LayerGroup : Layer
     {
         Title.text = $"[Group] {gameObject.name}";
         Footer.text = Title.text;
-        InitLayer(false);
+        InitTimeline();
         LayoutController = SetComponent<LayoutElement>();
         UIObject.color = Color.clear;
+        InitializScale = rectTransform.sizeDelta;
     }
     
-    public void Add(Layer layer)
+    public void Add(Timeline timeline)
     {
-        layer.Group = this;
+        if(timeline.layer) timeline.layer.Group = this;
+        if(!memberTimeline.Contains(timeline)) memberTimeline.Add(timeline);
+        timeline.transform.parent = MemberView.transform;
+        
+        ReCalGroupScale();
+        UIChanged();
+
+        Blank.ignoreLayout = false;
     }
 
-    public void Ignore(Layer layer)
+    public void Ignore(Timeline timeline)
     {
-        var index = memberLayers.FindIndex(0, x => x.Equals(layer));
+        var index = memberTimeline.FindIndex(0, x => x.Equals(timeline));
         
-        memberLayers.RemoveAt(index);
+        memberTimeline.RemoveAt(index);
+        
+        timeline.transform.parent = transform.parent;
+
+        ReCalGroupScale();
+        OnUIDrop(this);
+        UIChanged();
+        
+        Blank.ignoreLayout = true;
+    }
+
+    public void ReCalGroupScale()
+    {
+        var yScale = InitializScale.y;
+
+        for (int i = 0; i < MemberView.transform.childCount; i++)
+        {
+            if(MemberView.transform.GetChild(i).gameObject.name != "Blank") yScale += ((RectTransform) MemberView.transform.GetChild(i)).rect.height + 1;
+        }
+
+        Size = new Vector2(rectTransform.rect.width, yScale);
     }
     
     public override void OnUIDrag(IDragDropHandler UIConponent)
@@ -49,6 +81,11 @@ public class LayerGroup : Layer
         rectTransform.SetSiblingIndex(rectTransform.parent.childCount);
         
         lastPos = rectTransform.localPosition;
+    }
+
+    public void UIChanged()
+    {
+        FooterLine.SetSiblingIndex(FooterLine.parent.childCount);
     }
 
     public override void OnUIDrop(IDragDropHandler UIConponent)
@@ -64,6 +101,16 @@ public class LayerGroup : Layer
         */
     }
 
+    public override void OnUIEnter()
+    {
+        
+    }
+
+    public override void OnUIExit()
+    {
+        base.OnUIExit();
+    }
+
     private void OnMouseDrag()
     {
         if (IsSelected)
@@ -72,6 +119,7 @@ public class LayerGroup : Layer
             Debug.Log(sib);
             var blank = rectTransform.parent.Find("Blank"); 
             blank.SetSiblingIndex(sib);
+            FooterLine.SetSiblingIndex(MemberView.transform.childCount);
         }
     }
 
@@ -98,6 +146,6 @@ public class LayerGroup : Layer
 
     public void FixedUpdate()
     {
-        overlayActiveTime = 3;
+        base.FixedUpdate();
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+namespace AVJ
 {
     public class Window : InterectableUI, IUIInitializer
     {
