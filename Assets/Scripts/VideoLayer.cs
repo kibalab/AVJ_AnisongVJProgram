@@ -7,8 +7,6 @@ public class VideoLayer : Layer, IUIInitializer
 {
     public VideoPlayer player;
 
-    public RawImage UIObject;
-
     public void Initialize()
     {
         Type = LayerType.Video;
@@ -50,7 +48,7 @@ public class VideoLayer : Layer, IUIInitializer
 
         if (player.isPlaying)
         {
-            UIObject.texture = player.texture;
+            ((RawImage)UIObject).texture = player.texture;
             UIObject.color = Color.white;
             
         }

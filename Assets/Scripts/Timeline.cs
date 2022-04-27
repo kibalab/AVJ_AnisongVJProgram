@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class Timeline : InterectableUI, IUIInitializer
 {
     public Layer layer;
-    
-    public RawImage UIObject;
 
     public LayoutElement LayoutController;
 
@@ -44,9 +42,8 @@ public class Timeline : InterectableUI, IUIInitializer
         Debug.Log($"[Timeline, {gameObject.name}] Initializing Timeline");
     }
 
-    public void OnMouseDown()
+    public override void OnUIDrag(IDragDropHandler UIConponent)
     {
-        base.OnMouseDown();
 
         LayoutController.ignoreLayout = true;
         var blank = rectTransform.parent.Find("Blank");
@@ -57,9 +54,8 @@ public class Timeline : InterectableUI, IUIInitializer
         lastPos = rectTransform.localPosition;
     }
 
-    public void OnMouseUp()
+    public override void OnUIDrop(IDragDropHandler UIConponent)
     {
-        base.OnMouseUp();
         
         var blank = rectTransform.parent.Find("Blank");
         rectTransform.SetSiblingIndex(blank.GetSiblingIndex());
@@ -115,7 +111,7 @@ public class Timeline : InterectableUI, IUIInitializer
     {
         if(layer) if (layer.Type == LayerType.Video && UIObject)
         {
-            View.texture = ((VideoLayer)layer).UIObject.texture;
+            View.texture = ((RawImage)((VideoLayer)layer).UIObject).texture;
         }
     }
 }

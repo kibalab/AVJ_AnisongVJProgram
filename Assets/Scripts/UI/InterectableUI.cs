@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace AVJ.UIElements
 {
-    public class InterectableUI : UIBehaviour, IDragDropHandle
+    public class InterectableUI : UIBehaviour, IDragDropHandler
     {
         public Graphic UIObject;
 
@@ -21,10 +21,25 @@ namespace AVJ.UIElements
 
         public bool IsReady = false;
         
-        private Vector2 clickedPosition;
+        public Vector2 clickedPosition;
 
-        public float MouseSensitivity = 85.0f;
+        public float MouseSensitivity = 108.0f;
 
+        #region Properties
+    
+        public Vector2 Size 
+        {
+            set
+            {
+                ((BoxCollider2D)collider).size = value;
+                rectTransform.sizeDelta = value;
+                UIObject.rectTransform.sizeDelta = value;
+            }
+            get => rectTransform.sizeDelta;
+        }
+    
+        #endregion
+        
         protected override void OnEnable()
         {
             rectTransform = (RectTransform) transform;
@@ -32,14 +47,15 @@ namespace AVJ.UIElements
             IsReady = true;
         }
 
-        public void OnMouseDown()
+        private void OnMouseDown()
         {
             IsSelected = true;
+            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             clickedPosition = rectTransform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity;
             OnUIDrag(this);
         }
 
-        public void OnMouseUp()
+        private void OnMouseUp()
         {
             IsSelected = false;
             clickedPosition = new Vector2(0, 0);
@@ -58,13 +74,9 @@ namespace AVJ.UIElements
 
         #region Interface Methods
 
-        public void OnUIDrag(IDragDropHandle UIConponent)
-        {
-        }
+        public virtual void OnUIDrag(IDragDropHandler UIConponent) { }
 
-        public void OnUIDrop(IDragDropHandle UIConponent)
-        {
-        }
+        public virtual void OnUIDrop(IDragDropHandler UIConponent) { }
 
         public void Update()
         {

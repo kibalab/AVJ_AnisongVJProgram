@@ -478,16 +478,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85c9445e607b6d4d9edb71e18c3e492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
-  LayerImage: {fileID: 0}
+  UIObject: {fileID: 0}
+  collider: {fileID: 0}
   rectTransform: {fileID: 0}
-  IsResizeable: 1
   IsSelected: 0
   IsHovered: 0
-  MouseSensitivity: 85
-  overlayActiveTime: 3
-  SourceRatio: 1
-  Group: {fileID: 0}
+  IsReady: 0
+  MouseSensitivity: 108
   layer: {fileID: 0}
   LayoutController: {fileID: 0}
   Title: {fileID: 1303820654719274573}

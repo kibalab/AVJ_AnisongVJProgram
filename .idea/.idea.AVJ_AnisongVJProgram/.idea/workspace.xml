@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commit Scene, workspace">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IDragDropHandle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IUIInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIUtility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ImageLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ImageLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IDragDropHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IDragDropHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IDragDropHandle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IDragDropHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InterectableUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InterectableUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Window.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Videos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TimeLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TimeLine.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +32,28 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d87237cea3743d093e22c5b98f74fba118200/ba/43b82495/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/ImageLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Timeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5406a456cf734443b3d02a7d123287f1299290/3f/0cd0e79d/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,10 +73,10 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Build\AVJ_AnisongVJProgram.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -98,7 +116,6 @@
       <updated>1650519221037</updated>
       <workItem from="1650519226264" duration="16176000" />
       <workItem from="1650874826522" duration="42087000" />
-      <workItem from="1651032135692" duration="6264000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>

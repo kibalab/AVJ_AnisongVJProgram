@@ -23,6 +23,8 @@ namespace DefaultNamespace
         {
             if (!UIObject) UIObject = SetComponent<RawImage>();
             if (!collider) collider = SetComponent<BoxCollider2D>();
+            
+            Size = rectTransform.sizeDelta;
         
             Debug.Log($"[Window, {gameObject.name}] Initializing Window");
         }

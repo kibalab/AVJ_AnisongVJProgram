@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AVJ.UIElements;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -39,10 +40,8 @@ public class LayerGroup : Layer
         memberLayers.RemoveAt(index);
     }
     
-    public void OnMouseDown()
+    public override void OnUIDrag(IDragDropHandler UIConponent)
     {
-        base.OnMouseDown();
-
         LayoutController.ignoreLayout = true;
         var blank = rectTransform.parent.Find("Blank");
         blank.SetSiblingIndex(rectTransform.GetSiblingIndex());
@@ -52,10 +51,8 @@ public class LayerGroup : Layer
         lastPos = rectTransform.localPosition;
     }
 
-    public void OnMouseUp()
+    public override void OnUIDrop(IDragDropHandler UIConponent)
     {
-        base.OnMouseUp();
-        
         var blank = rectTransform.parent.Find("Blank");
         rectTransform.SetSiblingIndex(blank.GetSiblingIndex());
         blank.SetSiblingIndex(rectTransform.parent.childCount);

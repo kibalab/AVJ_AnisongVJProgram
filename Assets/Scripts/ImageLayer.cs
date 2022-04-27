@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ImageLayer : Layer, IUIInitializer
 {
-    public RawImage UIObject;
 
     public void Initialize()
     {
@@ -22,7 +21,7 @@ public class ImageLayer : Layer, IUIInitializer
     {
         this.media = media;
 
-        UIObject.texture = media;
+        ((RawImage)UIObject).texture = media;
         Debug.Log($"[VideoLayer] Size Ratio : ({media.width}, {media.height})");
 
         ScalingToRatio(new Vector2(media.width, media.height));

@@ -13,8 +13,6 @@ public class Layer : InterectableUI, IUIInitializer
 {
     public LayerType Type = LayerType.Layer;
     
-    private BoxCollider2D collider;
-    
     private Outline OutlineEffect;
 
     public float overlayActiveTime = 3.0f;
@@ -25,21 +23,6 @@ public class Layer : InterectableUI, IUIInitializer
 
     public LayerGroup Group = null;
     
-    
-    #region Properties
-    
-    public Vector2 Size
-    {
-        set
-        {
-            collider.size = value;
-            rectTransform.sizeDelta = value;
-            UIObject.rectTransform.sizeDelta = value;
-        }
-        get => rectTransform.sizeDelta;
-    }
-    
-    #endregion
     
 
     public void Initialize()
@@ -99,7 +82,7 @@ public class Layer : InterectableUI, IUIInitializer
         overlayActiveTime -= Time.deltaTime;
     }
 
-    public void OnMouseDown()
+    public override void OnUIDrag(IDragDropHandler UIConponent)
     {
         OutlineEffect.effectColor = Color.white;
         OutlineEffect.enabled = true;
@@ -107,7 +90,7 @@ public class Layer : InterectableUI, IUIInitializer
         
     }
 
-    public void OnMouseUp()
+    public override void OnUIDrop(IDragDropHandler UIConponent)
     {
         OutlineEffect.effectColor = Color.cyan;
         OutlineEffect.enabled = false;
