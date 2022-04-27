@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AVJ.UIElements;
 using B83.Win32;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,14 +36,17 @@ public class LayerManager : MonoBehaviour
 
         var AddedLayer = layerObject.AddComponent<T>();;
 
-        AddedLayer.LayerImage = LayerImage;
-
+        AddedLayer.UIObject = LayerImage;
 
         if (typeof(T) == typeof(VideoLayer)) AddedLayer.media = path;
         else AddedLayer.media = LoadImage(path);
 
         var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
-        timeline.GetComponent<Timeline>().layer = AddedLayer;
+        var timelineConponent = timeline.GetComponent<Timeline>();
+        timelineConponent.layer = AddedLayer;
+        
+        UIUtility.InitializeUI(timelineConponent);
+        UIUtility.InitializeUI(AddedLayer);
 
         return AddedLayer;
     }

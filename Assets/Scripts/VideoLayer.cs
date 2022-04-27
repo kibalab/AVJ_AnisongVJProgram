@@ -1,17 +1,23 @@
-﻿using UnityEngine;
+﻿using AVJ.UIElements;
+using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
-public class VideoLayer : Layer
+public class VideoLayer : Layer, IUIInitializer
 {
     public VideoPlayer player;
 
-    void Start()
+    public RawImage UIObject;
+
+    public void Initialize()
     {
         Type = LayerType.Video;
         InitLayer(true); // Layer Initialize Codes
         InitScaler();
         InitPlayer();
         PlayClip((string)media);
+        
+        IsReady = true;
     }
 
     public void InitPlayer()
@@ -44,13 +50,13 @@ public class VideoLayer : Layer
 
         if (player.isPlaying)
         {
-            LayerImage.texture = player.texture;
-            LayerImage.color = Color.white;
+            UIObject.texture = player.texture;
+            UIObject.color = Color.white;
             
         }
         else
         {
-            LayerImage.color = Color.black;
+            UIObject.color = Color.black;
         }
     }
 }

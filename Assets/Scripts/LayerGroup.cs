@@ -24,7 +24,7 @@ public class LayerGroup : Layer
         Footer.text = Title.text;
         InitLayer(false);
         LayoutController = SetComponent<LayoutElement>();
-        LayerImage.color = Color.clear;
+        UIObject.color = Color.clear;
     }
     
     public void Add(Layer layer)

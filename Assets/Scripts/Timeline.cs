@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AVJ.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timeline : Layer
+public class Timeline : InterectableUI, IUIInitializer
 {
     public Layer layer;
+    
+    public RawImage UIObject;
 
     public LayoutElement LayoutController;
 
@@ -17,22 +20,28 @@ public class Timeline : Layer
 
     public Vector3 lastPos;
     
-    // Start is called before the first frame update
-    void Start()
+
+    public void Initialize()
     {
         Title.text = $"[{layer.Type.ToString()}] {layer.gameObject.name}";
-        InitLayer(false);
-        DrawLine();
+        InitTimeline();
         LayoutController = SetComponent<LayoutElement>();
         
-        if (layer.Type == LayerType.Image && LayerImage)
+        if (layer.Type == LayerType.Image && UIObject)
         {
             View.texture = (Texture2D)layer.media;
         }
+        
+        IsReady = true;
     }
-
-    public void DrawLine()
+    
+    public void InitTimeline()
     {
+        // Outline Component Vailed Check
+        if (!UIObject) UIObject = SetComponent<RawImage>();
+        if (!collider) collider = SetComponent<BoxCollider2D>();
+        
+        Debug.Log($"[Timeline, {gameObject.name}] Initializing Timeline");
     }
 
     public void OnMouseDown()
@@ -59,7 +68,7 @@ public class Timeline : Layer
         LayoutController.ignoreLayout = false;
         
         layer.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
-        layer.LayerImage.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
+        layer.UIObject.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
     }
 
     private void OnMouseDrag()
@@ -101,18 +110,12 @@ public class Timeline : Layer
         Destroy(gameObject);
     }
 
-    private void Update()
-    {
-        base.Update();
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        overlayActiveTime = 3;
-        if(layer) if (layer.Type == LayerType.Video && LayerImage)
+        if(layer) if (layer.Type == LayerType.Video && UIObject)
         {
-            View.texture = layer.LayerImage.texture;
+            View.texture = ((VideoLayer)layer).UIObject.texture;
         }
     }
 }
