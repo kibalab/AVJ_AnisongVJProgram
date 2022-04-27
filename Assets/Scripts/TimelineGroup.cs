@@ -40,7 +40,7 @@ public class TimelineGroup : Timeline
         timeline.transform.parent = MemberView.transform;
         
         ReCalGroupScale();
-        UIChanged();
+        OnUIDrop(this);
 
         Blank.ignoreLayout = false;
     }
@@ -54,8 +54,6 @@ public class TimelineGroup : Timeline
         timeline.transform.parent = transform.parent;
 
         ReCalGroupScale();
-        OnUIDrop(this);
-        UIChanged();
         
         Blank.ignoreLayout = true;
     }
@@ -66,7 +64,8 @@ public class TimelineGroup : Timeline
 
         for (int i = 0; i < MemberView.transform.childCount; i++)
         {
-            if(MemberView.transform.GetChild(i).gameObject.name != "Blank") yScale += ((RectTransform) MemberView.transform.GetChild(i)).rect.height + 1;
+            var child = MemberView.transform.GetChild(i);
+            if(child.gameObject.name != "Blank" && child.gameObject.name != "Blank_S") yScale += ((RectTransform) child).rect.height + 1;
         }
 
         Size = new Vector2(rectTransform.rect.width, yScale);
@@ -81,11 +80,6 @@ public class TimelineGroup : Timeline
         rectTransform.SetSiblingIndex(rectTransform.parent.childCount);
         
         lastPos = rectTransform.localPosition;
-    }
-
-    public void UIChanged()
-    {
-        FooterLine.SetSiblingIndex(FooterLine.parent.childCount);
     }
 
     public override void OnUIDrop(IDragDropHandler UIConponent)
@@ -116,7 +110,6 @@ public class TimelineGroup : Timeline
         if (IsSelected)
         {
             var sib = CalTargetSiblingIndex();
-            Debug.Log(sib);
             var blank = rectTransform.parent.Find("Blank"); 
             blank.SetSiblingIndex(sib);
             FooterLine.SetSiblingIndex(MemberView.transform.childCount);
@@ -128,7 +121,6 @@ public class TimelineGroup : Timeline
         var start = rectTransform.parent.GetChild(0).localPosition.y;
         for (int i = 0; i < rectTransform.parent.childCount; i++)
         {
-            Debug.Log(start);
             if (start <= rectTransform.localPosition.y) return i;
             start += ((RectTransform) rectTransform.parent.GetChild(i)).rect.y * 2;
         }
@@ -147,5 +139,9 @@ public class TimelineGroup : Timeline
     public void FixedUpdate()
     {
         base.FixedUpdate();
+        
+        var blank = MemberView.transform.Find("Blank_S");
+        blank.SetSiblingIndex(MemberView.transform.childCount-1);
+        FooterLine.SetSiblingIndex(FooterLine.parent.childCount);
     }
 }

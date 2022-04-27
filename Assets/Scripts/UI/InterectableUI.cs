@@ -54,7 +54,6 @@ namespace AVJ.UIElements
         {
             IsSelected = true;
             collider.enabled = false;
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             clickedPosition = rectTransform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity;
             
             OnUIDrag(this);

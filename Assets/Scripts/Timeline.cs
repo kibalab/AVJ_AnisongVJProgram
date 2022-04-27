@@ -57,6 +57,12 @@ public class Timeline : InterectableUI, IUIInitializer
 
     public override void OnUIDrop(IDragDropHandler UIConponent)
     {
+        
+        layer.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
+        layer.UIObject.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
+        
+        FindGroup();
+        
         UIControl.CurrentSelected = null;
         var blank = rectTransform.parent.Find("Blank");
         rectTransform.SetSiblingIndex(blank.GetSiblingIndex());
@@ -64,8 +70,7 @@ public class Timeline : InterectableUI, IUIInitializer
         blank.GetComponent<LayoutElement>().ignoreLayout = true;
         LayoutController.ignoreLayout = false;
         
-        layer.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
-        layer.UIObject.rectTransform.SetSiblingIndex(rectTransform.GetSiblingIndex());
+        
     }
 
     private void OnMouseDrag()
@@ -77,6 +82,21 @@ public class Timeline : InterectableUI, IUIInitializer
             var blank = rectTransform.parent.Find("Blank"); 
             blank.SetSiblingIndex(sib);
         }
+    }
+
+    public void FindGroup()
+    {
+        var targetGroup = UIControl.HoveredUIs.Find(x => 
+            { return x.GetType() == typeof(TimelineGroup); }) as TimelineGroup;
+
+        if (layer) // 그룹안에 그룹을 생각하여 예외처리함
+        {
+            if (layer.Group && targetGroup != layer.Group) layer.Group.Ignore(this);
+
+            layer.Group = targetGroup;
+        }
+
+        if (targetGroup)targetGroup.Add(this);
     }
 
     public int CalTargetSiblingIndex()
@@ -113,21 +133,6 @@ public class Timeline : InterectableUI, IUIInitializer
         if(layer) if (layer.Type == LayerType.Video && UIObject)
         {
             View.texture = ((RawImage)((VideoLayer)layer).UIObject).texture;
-        }
-
-        if (IsSelected)
-        {
-            var targetGroup = UIControl.HoveredUIs.Find(x => 
-                { return x.GetType() == typeof(TimelineGroup); }) as TimelineGroup;
-
-            if (layer) // 그룹안에 그룹을 생각하여 예외처리함
-            {
-                if (layer.Group && targetGroup != layer.Group) layer.Group.Ignore(this);
-
-                layer.Group = targetGroup;
-            }
-
-            if (targetGroup)targetGroup.Add(this);
         }
     }
 }
