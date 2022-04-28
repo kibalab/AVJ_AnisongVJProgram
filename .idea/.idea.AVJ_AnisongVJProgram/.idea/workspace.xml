@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Window.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InterectableUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InterectableUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <updated>1650519221037</updated>
       <workItem from="1650519226264" duration="16176000" />
       <workItem from="1650874826522" duration="42087000" />
-      <workItem from="1651130190490" duration="2754000" />
+      <workItem from="1651130190490" duration="3772000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -299,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651086905704</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window">
+      <created>1651140264438</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1651140264439</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +327,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Initialize Repo" />
     <MESSAGE value="Commit New Unity Project Files" />
     <MESSAGE value="Add Dragable Layer object" />
     <MESSAGE value="Add Resize Controller &amp; Pivot Resiz system" />
@@ -346,6 +351,7 @@
     <MESSAGE value="Fix DragPosition at override functions, Fix Inheritance object cast" />
     <MESSAGE value="Add Timelines Grouping (NOT STABLED)" />
     <MESSAGE value="Grouping Stabilization, Move to FindGroup(new Func) at FixedUpdate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grouping Stabilization, Move to FindGroup(new Func) at FixedUpdate" />
+    <MESSAGE value="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window" />
   </component>
 </project>
