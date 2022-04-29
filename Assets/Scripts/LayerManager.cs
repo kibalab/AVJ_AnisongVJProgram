@@ -67,7 +67,6 @@ public class LayerManager : MonoBehaviour
                      aFiles.Aggregate((a, b) => a + "\n\t" + b);
         Debug.Log(str);
         
-        
         foreach (var afile in aFiles)
         {
             if(Path.GetExtension(afile) == ".mp4")
