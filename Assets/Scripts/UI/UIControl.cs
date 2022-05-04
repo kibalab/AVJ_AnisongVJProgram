@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using AVJ.Settings;
 using AVJ.UIElements;
 using UnityEngine.EventSystems;
 
