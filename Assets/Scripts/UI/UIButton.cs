@@ -32,13 +32,13 @@ namespace AVJ.UIElements
             OriginColor = LayerImage.color;
         }
 
-        public void OnMouseDown()
+        public virtual void OnMouseDown()
         {
             isClicked = true;
             LayerImage.color = ClickedColor;
         }
 
-        public void OnMouseUp()
+        public virtual void OnMouseUp()
         {
             isClicked = false;
             LayerImage.color = OriginColor;
@@ -46,17 +46,17 @@ namespace AVJ.UIElements
             OnClick.Invoke();
         }
 
-        private void OnMouseOver()
+        public virtual void OnMouseOver()
         {
             if (isClicked) return;
             LayerImage.color = HoveredColor;
         }
 
-        private void OnMouseEnter()
+        public virtual void OnMouseEnter()
         {
         }
 
-        private void OnMouseExit()
+        public virtual void OnMouseExit()
         {
             LayerImage.color = OriginColor;
         }

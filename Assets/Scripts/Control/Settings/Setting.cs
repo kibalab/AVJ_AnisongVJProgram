@@ -8,7 +8,8 @@ namespace AVJ.Settings
 {
     public class Setting : MonoBehaviour
     {
-        public UnityEvent<float> OnChange;
+        public UnityEvent<float> OnChangeFloat;
+        public UnityEvent<bool> OnChangeBool;
         public ISettingControl control;
 
         private void Start()
@@ -18,7 +19,8 @@ namespace AVJ.Settings
 
         public void OnChangeValue(float value)
         {
-            OnChange.Invoke(value);
+            OnChangeFloat.Invoke(value);
+            OnChangeBool.Invoke(value > 0.5f);
         }
         
         public void ChangeValue(ISettingControl Control)
