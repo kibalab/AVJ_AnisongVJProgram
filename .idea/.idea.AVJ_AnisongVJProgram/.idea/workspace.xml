@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Migration Unity2019.4 to Unity 2021.1">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MIDI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MIDI/BindMidi.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MIDI/BindMidi.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MIDI/MidiEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MIDI/MidiEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs.meta" afterDir="false" />
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Restructuring Input Binding Interfaces, Add Binder">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIToggle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIToggle.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIControl.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIControl.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/ISettingControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/ISettingControl.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,13 +33,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Settings/ISettingControl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/PackageManagerSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Window.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Settings/Setting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -109,6 +102,8 @@
       <workItem from="1650519226264" duration="16176000" />
       <workItem from="1650874826522" duration="42087000" />
       <workItem from="1651130190490" duration="14583000" />
+      <workItem from="1651254559746" duration="779000" />
+      <workItem from="1651623707725" duration="10216000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -327,7 +322,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651164914425</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="[NOT WORK, WIP]ADD MIDI System for binding">
+      <created>1651254598745</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1651254598745</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add MIDIJack Package, Add Particle resources. Commit MIDI System Scripts">
+      <created>1651254732519</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1651254732519</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Restructuring Input Binding Interfaces, Add Binder">
+      <created>1651630487841</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1651630487842</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,9 +365,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add Dragable Layer object" />
-    <MESSAGE value="Add Resize Controller &amp; Pivot Resiz system" />
-    <MESSAGE value="Add Overlay View Timer" />
     <MESSAGE value="Set Scaler Auto Initializing, Add Ratio ScalerMode&amp; longitudinal and horizontal ScalerMode" />
     <MESSAGE value="Add Window.cs, ImageLayer.cs, Splite Render Screen &amp; Control UI" />
     <MESSAGE value="Commit ImageLayer.cs" />
@@ -374,6 +387,9 @@
     <MESSAGE value="Grouping Stabilization, Move to FindGroup(new Func) at FixedUpdate" />
     <MESSAGE value="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window" />
     <MESSAGE value="Migration Unity2019.4 to Unity 2021.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration Unity2019.4 to Unity 2021.1" />
+    <MESSAGE value="[NOT WORK, WIP]ADD MIDI System for binding" />
+    <MESSAGE value="Add MIDIJack Package, Add Particle resources. Commit MIDI System Scripts" />
+    <MESSAGE value="Restructuring Input Binding Interfaces, Add Binder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructuring Input Binding Interfaces, Add Binder" />
   </component>
 </project>

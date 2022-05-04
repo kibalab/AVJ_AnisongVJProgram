@@ -12628,8 +12628,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1199944998}
         m_TargetAssemblyTypeName: AVJ.Settings.Setting, Assembly-CSharp
-        m_MethodName: OnChangeValue
-        m_Mode: 4
+        m_MethodName: EnterBindMode
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
