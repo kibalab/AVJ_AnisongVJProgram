@@ -4,19 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Restructuring Input Binding Interfaces, Add Binder">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIToggle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIToggle.cs.meta" afterDir="false" />
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/shelf/Uncommitted_changes_before_Update_at_2022-04-27_오후_6_49_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Editor/MidiJackWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Editor/MidiJackWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Midi.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Midi.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiDriver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiDriver.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiMaster.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiMaster.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiStateUpdater.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/MidiStateUpdater.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Info.plist.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/MacOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/MacOS/MidiJackPlugin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/MacOS/MidiJackPlugin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Resources/en.lproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Resources/en.lproj/InfoPlist.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/MidiJackPlugin.bundle/Contents/Resources/en.lproj/InfoPlist.strings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x64/MidiJackPlugin.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x64/MidiJackPlugin.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x86.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x86/MidiJackPlugin.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MidiJack/Plugins/x86/MidiJackPlugin.dll.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/ISettingControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/ISettingControl.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/ISettingControl.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings/Setting.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/EventManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/MIDI/BindMidi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/MIDI/BindMidi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/MIDI/MidiEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/MIDI/MidiEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimelineGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimelineGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,10 +62,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Settings/ISettingControl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Settings/Setting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/MIDI/BindMidi.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -104,6 +131,7 @@
       <workItem from="1651130190490" duration="14583000" />
       <workItem from="1651254559746" duration="779000" />
       <workItem from="1651623707725" duration="10216000" />
+      <workItem from="1651716356126" duration="4456000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
