@@ -11,12 +11,31 @@ namespace UI.UIElements
     public class UISlider : UIButton
     {
         public Vector2 MinMax = new Vector2(0.0f, 1.0f);
-        public float Value = 0;
+        private float m_Value = 0;
         private float lastYPos = 0;
+
+        public UnityEvent<float> OnChangeValue;
+
+        public float Value
+        {
+            set
+            {
+                if (m_Value != value)
+                {
+                    m_Value = value;
+                    UpdateUI();
+                    OnChangeValue.Invoke(value);
+                }
+            }
+
+            get => m_Value;
+        }
+        
         public override void Initialize()
         {
             base.Initialize();
             rectTransform = GetComponent<RectTransform>();
+
         }
 
         public override void OnMouseDown()
@@ -26,9 +45,13 @@ namespace UI.UIElements
 
         private void OnMouseDrag()
         {
-            Value = ClampValue(Value + Camera.main.ScreenToWorldPoint(Input.mousePosition).x - lastYPos);
+            Value = ClampValue(m_Value + Camera.main.ScreenToWorldPoint(Input.mousePosition).x - lastYPos);
             lastYPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            LayerImage.rectTransform.sizeDelta = new Vector2(Value * rectTransform.sizeDelta.x * MinMax.y, 0);
+        }
+
+        public void UpdateUI()
+        {
+            LayerImage.rectTransform.sizeDelta = new Vector2(m_Value * rectTransform.sizeDelta.x * MinMax.y, 0);
         }
 
         private float ClampValue(float value) => Mathf.Clamp(value, MinMax.x, MinMax.y);

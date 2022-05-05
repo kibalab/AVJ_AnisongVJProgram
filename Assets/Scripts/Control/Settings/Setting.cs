@@ -4,6 +4,7 @@ using Minis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace AVJ.Settings
 {
@@ -22,16 +23,20 @@ namespace AVJ.Settings
 
         public bool IsEqual(MidiNoteControl note) =>
             Channel == (note.device as Minis.MidiDevice)?.channel && Note == note.noteNumber;
+        
+        public bool IsEqual(MidiValueControl note) =>
+            Channel == (note.device as Minis.MidiDevice)?.channel && Note == note.controlNumber;
 
         public override string ToString() => $"(MIDI {Channel.ToString()}, {Note})";
     }
     
     public class Setting : MonoBehaviour
     {
-        public UnityEvent<float> OnChangeFloat;
-        public UnityEvent<bool> OnChangeBool;
+        public Text BindState;
+        public UnityEvent<float> OnChangeFloat = new UnityEvent<float>();
+        public UnityEvent<bool> OnChangeBool = new UnityEvent<bool>();
 
-        public Midi bind = null;
+        public Midi bind = new Midi(-1, -1, 0);
 
         private void Start()
         {
@@ -40,6 +45,7 @@ namespace AVJ.Settings
 
         public void OnChangeValue(float value)
         {
+            if(value == null) return;
             OnChangeFloat.Invoke(value);
             OnChangeBool.Invoke(value > 0.5f);
         }
@@ -49,7 +55,11 @@ namespace AVJ.Settings
             OnChangeValue(value);
         }
 
-        public void EnterBindMode() => EventManager.BindTarget = this;
+        public void EnterBindMode()
+        {
+            BindState.text = "=";
+            EventManager.BindTarget = this;
+        }
 
         public void SetMidiBind()
         {
@@ -66,12 +76,6 @@ namespace AVJ.Settings
                     // object is only useful to specify the target note (note
                     // number, channel number, device name, etc.) Use the velocity
                     // argument as an input note velocity.
-                    if (this.Equals(EventManager.BindTarget))
-                    {
-                        bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.noteNumber, 0);
-                        EventManager.BindTarget = null;
-                        return;
-                    }
                     
                     if(!bind.IsEqual(note)) return;
                     
@@ -86,7 +90,37 @@ namespace AVJ.Settings
                     ChangeValue(1);
                 };
 
+                midiDevice.onWillControlChange += (note, value) =>
+                {
+                    if (this.Equals(EventManager.BindTarget))
+                    {
+                        bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.controlNumber, 0);
+                        EventManager.BindTarget = null;
+                        BindState.text = "!" + note.controlNumber;
+                        return;
+                    }
+
+                    if (!bind.IsEqual(note)) return;
+                    Debug.Log(string.Format(
+                        "Control Change !{0} ({1}) val:{2:0.00} ch:{3} dev:'{4}'",
+                        note.controlNumber,
+                        note.shortDisplayName,
+                        value,
+                        (note.device as Minis.MidiDevice)?.channel,
+                        note.device.description.product
+                    ));
+                    ChangeValue(value);
+                };
+
                 midiDevice.onWillNoteOff += (note) => {
+                    
+                    if (this.Equals(EventManager.BindTarget))
+                    {
+                        bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.noteNumber, 0);
+                        EventManager.BindTarget = null;
+                        BindState.text = "#" + note.noteNumber;
+                        return;
+                    }
                     
                     if(!bind.IsEqual(note)) return;
                     

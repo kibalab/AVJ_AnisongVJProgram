@@ -18,7 +18,6 @@ public class Timeline : InterectableUI, IUIInitializer
     public RawImage View;
 
     public Vector3 lastPos;
-    
 
     public void Initialize()
     {
@@ -41,6 +40,11 @@ public class Timeline : InterectableUI, IUIInitializer
         if (!collider) collider = SetComponent<BoxCollider2D>();
         
         Debug.Log($"[Timeline, {gameObject.name}] Initializing Timeline");
+    }
+
+    public void OpenLayerSetting()
+    {
+        LayerWindowUtil.window.TargetLayer = layer;
     }
 
     public override void OnUIDrag(IDragDropHandler UIConponent)

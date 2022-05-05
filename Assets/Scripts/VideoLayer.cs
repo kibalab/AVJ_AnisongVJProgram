@@ -40,6 +40,7 @@ public class VideoLayer : Layer, IUIInitializer
     {
         Debug.Log($"[VideoLayer] Size Ratio : ({source.texture.width}, {source.texture.height})");
         ScalingToRatio(new Vector2(source.texture.width, source.texture.height));
+        UIObject.color = Color.white;
     }
 
     public void Update()
@@ -49,7 +50,6 @@ public class VideoLayer : Layer, IUIInitializer
         if (player.isPlaying)
         {
             ((RawImage)UIObject).texture = player.texture;
-            UIObject.color = Color.white;
             
         }
         else

@@ -23,6 +23,7 @@ public class TimelineGroup : Timeline
 
     public void ToggleFold() => MemberView.SetActive(!MemberView.activeSelf);
     
+    
     void Start()
     {
         Title.text = $"[Group] {gameObject.name}";

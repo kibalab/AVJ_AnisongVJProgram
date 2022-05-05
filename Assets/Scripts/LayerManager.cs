@@ -23,6 +23,7 @@ public class LayerManager : MonoBehaviour
     
     public GameObject LayerPrefab;
     public GameObject TimelinePrefab;
+    public Transform WindowField;
 
 
     public Layer AddLayer<T>(string name, string path) where T : Layer
@@ -43,6 +44,7 @@ public class LayerManager : MonoBehaviour
 
         var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
         var timelineConponent = timeline.GetComponent<Timeline>();
+        
         timelineConponent.layer = AddedLayer;
         
         UIUtility.InitializeUI(timelineConponent);
