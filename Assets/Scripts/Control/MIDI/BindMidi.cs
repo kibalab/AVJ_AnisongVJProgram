@@ -1,21 +1,17 @@
 using AVJ.Settings;
 using AVJ.UIElements;
-using MidiJack;
+using UnityEngine;
 
 namespace AVJ.Control.MIDI
 {
-    public class BindMidi : MidiEvent
+    public class BindMidi// : MidiEvent
     {
+        /*
         public BindMidi(Midi Midi, Setting setting) : base(Midi, setting)
         {
+            Debug.Log($"[Setting] Setup Input Binder {setting.name}");
             Setup(Midi, setting);
         }
-
-        public void Bind(MidiChannel channel, int note)
-        {
-            var midi = new Midi(channel, note, 0);
-            
-            EventManager.InputEvent.Add(this);
-        }
+        */
     }
 }

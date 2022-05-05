@@ -1,32 +1,31 @@
 using AVJ.Settings;
-using MidiJack;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Layouts;
 
 namespace AVJ.Control.MIDI
 {
+    /*
     public class Midi : IInput
     {
-        public MidiChannel Channel;
+        public int Channel;
         public int Note;
         public float Value;
 
-        public Midi(MidiChannel Channel, int Note, float Value)
+        public Midi(int Channel, int Note, float Value)
         {
             this.Channel = Channel;
             this.Note = Note;
             this.Value = Value;
         }
+
+        public override string ToString() => $"(MIDI {Channel.ToString()}, {Note})";
     }
 
-    public class MidiEvent : ISettingControl
+    public class MidiEvent// : ISettingControl
     {
-        public MidiDriver.NoteOnDelegate MidiOnDelegate = null;
-        public MidiDriver.NoteOffDelegate MidiOffDelegate = null;
-        public MidiDriver.KnobDelegate KnobDelegate = null;
-        
         public Setting setting;
         public Midi Midi;
-
         
         public MidiEvent(Midi Midi, Setting setting)
         {
@@ -35,16 +34,11 @@ namespace AVJ.Control.MIDI
 
         public void Setup(IInput Midi, Setting setting)
         {
-            MidiOnDelegate += MidiOnEvent;
-            MidiOffDelegate += MidiOffEvent;
-            KnobDelegate += MidiRangeEvent;
-            
-
-            this.setting = setting;
+                        this.setting = setting;
             this.Midi = (Midi)Midi;
         }
-
-        public virtual void MidiOnEvent(MidiChannel channel, int note, float velocity)
+        
+        public void MidiOnEvent(int channel, int note, float velocity)
         {
             if (EventManager.BindTarget == this) Bind(channel, note);
             if (Midi.Equals(channel) && Midi.Note.Equals(note) && !EventManager.IsWaitForBinding)
@@ -54,7 +48,7 @@ namespace AVJ.Control.MIDI
             }
         }
         
-        public virtual void MidiOffEvent(MidiChannel channel, int note)
+        public void MidiOffEvent(int channel, int note)
         {
             if (EventManager.BindTarget == this) Bind(channel, note);
             if (Midi.Equals(channel) && Midi.Note.Equals(note) && !EventManager.IsWaitForBinding)
@@ -64,8 +58,9 @@ namespace AVJ.Control.MIDI
             }
         }
         
-        public virtual void MidiRangeEvent(MidiChannel channel, int note, float value)
+        public void MidiRangeEvent(int channel, int note, float value)
         {
+            Debug.Log($"[MidiEvent] Get Input {Midi.ToString()} : {value}");
             if (EventManager.BindTarget == this) Bind(channel, note);
             if (Midi.Equals(channel) && Midi.Note.Equals(note) && !EventManager.IsWaitForBinding)
             {
@@ -74,7 +69,7 @@ namespace AVJ.Control.MIDI
             }
         }
 
-        public void Bind(MidiChannel channel, int note)
+        public void Bind(int channel, int note)
         {
             Midi.Channel = channel;
             Midi.Note = note;
@@ -82,5 +77,6 @@ namespace AVJ.Control.MIDI
         }
         
         public float GetValue() => Midi.Value;
-    }
+        
+    }*/
 }

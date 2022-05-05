@@ -125,7 +125,7 @@ public class TimelineGroup : Timeline
             start += ((RectTransform) rectTransform.parent.GetChild(i)).rect.y * 2;
         }
         
-        Debug.Log("End");
+         Debug.Log("End");
         
             
 

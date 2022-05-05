@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace AVJ.UIElements
 {
-    public class UIButton : UIBehaviour
+    public class UIButton : UIBehaviour, IUIInitializer
     {
         public Image LayerImage;
         public RectTransform rectTransform;
@@ -22,7 +22,9 @@ namespace AVJ.UIElements
 
         public bool isClicked = false;
 
-        void Start()
+        void Start() => UIUtility.InitializeUI(this);
+
+        public virtual void Initialize()
         {
             if (OnClick == null)
                 OnClick = new UnityEvent();
