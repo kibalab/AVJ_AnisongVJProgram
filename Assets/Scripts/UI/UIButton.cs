@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AVJ.Control;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -45,7 +46,7 @@ namespace AVJ.UIElements
             isClicked = false;
             LayerImage.color = OriginColor;
 
-            OnClick.Invoke();
+            Click();
         }
 
         public virtual void OnMouseOver()
@@ -62,6 +63,9 @@ namespace AVJ.UIElements
         {
             LayerImage.color = OriginColor;
         }
+        
+        public void Click() => OnClick.Invoke();
+        
 
         public T SetComponent<T>() where T : Component
         {

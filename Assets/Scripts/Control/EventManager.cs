@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using AVJ.Control.MIDI;
+using AVJ.Control;
 using AVJ.Settings;
 using UnityEngine;
 
 public static class EventManager
 {
     public static Queue<LayerEvent> Events = new Queue<LayerEvent>();
-    public static List<ISettingControl> InputEvent = new List<ISettingControl>();
 
     /*
     public static bool IsWaitForBinding
@@ -18,7 +17,18 @@ public static class EventManager
     public static MidiEvent BindTarget = null;
     */
     
-    public static Setting BindTarget = null;
+    private static IBindableHandler m_BindTarget = null;
+
+    public static IBindableHandler BindTarget
+    {
+        set
+        {
+            if(m_BindTarget != null) m_BindTarget.LeaveBindMode();
+            m_BindTarget = value;
+        }
+
+        get => m_BindTarget;
+    }
 
     public static void Clear() => Events = new Queue<LayerEvent>();
 }

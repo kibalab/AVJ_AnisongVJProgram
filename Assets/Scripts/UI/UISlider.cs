@@ -10,7 +10,6 @@ namespace UI.UIElements
 {
     public class UISlider : UIButton
     {
-        public Vector2 MinMax = new Vector2(0.0f, 1.0f);
         private float m_Value = 0;
         private float lastYPos = 0;
 
@@ -51,9 +50,9 @@ namespace UI.UIElements
 
         public void UpdateUI()
         {
-            LayerImage.rectTransform.sizeDelta = new Vector2(m_Value * rectTransform.sizeDelta.x * MinMax.y, 0);
+            LayerImage.rectTransform.sizeDelta = new Vector2(m_Value * rectTransform.sizeDelta.x, 0);
         }
 
-        private float ClampValue(float value) => Mathf.Clamp(value, MinMax.x, MinMax.y);
+        private float ClampValue(float value) => Mathf.Clamp(value, 0, 1);
     }
 }

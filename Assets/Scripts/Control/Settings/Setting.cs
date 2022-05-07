@@ -1,10 +1,11 @@
 using System;
-using AVJ.Control.MIDI;
+using AVJ.Control;
 using Minis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace AVJ.Settings
 {
@@ -30,8 +31,10 @@ namespace AVJ.Settings
         public override string ToString() => $"(MIDI {Channel.ToString()}, {Note})";
     }
     
-    public class Setting : MonoBehaviour
+    public class Setting : MonoBehaviour, IBindableHandler
     {
+        public String SettingName = "";
+        public Text ValueState;
         public Text BindState;
         public UnityEvent<float> OnChangeFloat = new UnityEvent<float>();
         public UnityEvent<bool> OnChangeBool = new UnityEvent<bool>();
@@ -48,6 +51,7 @@ namespace AVJ.Settings
             if(value == null) return;
             OnChangeFloat.Invoke(value);
             OnChangeBool.Invoke(value > 0.5f);
+            if(ValueState) ValueState.text = $"{SettingName} ({(value * 100).ToString("000.0")}%)";
         }
         
         private void ChangeValue(float value)
@@ -61,7 +65,13 @@ namespace AVJ.Settings
             EventManager.BindTarget = this;
         }
 
-        public void SetMidiBind()
+        public void LeaveBindMode()
+        {
+            BindState.text = $"{bind.Note}";
+        }
+        
+
+        private void SetMidiBind()
         {
             InputSystem.onDeviceChange += (device, change) =>
             {
@@ -96,7 +106,7 @@ namespace AVJ.Settings
                     {
                         bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.controlNumber, 0);
                         EventManager.BindTarget = null;
-                        BindState.text = "!" + note.controlNumber;
+                        BindState.text = note.controlNumber.ToString();
                         return;
                     }
 
@@ -118,7 +128,7 @@ namespace AVJ.Settings
                     {
                         bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.noteNumber, 0);
                         EventManager.BindTarget = null;
-                        BindState.text = "#" + note.noteNumber;
+                        BindState.text = note.noteNumber.ToString();
                         return;
                     }
                     
