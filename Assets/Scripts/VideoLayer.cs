@@ -32,6 +32,7 @@ public class VideoLayer : Layer, IUIInitializer
         this.media = media;
         player.source = VideoSource.Url;
         player.url = media;
+        player.SetDirectAudioVolume(0, 0);
         player.Play();
 
         player.started += StartVideo;

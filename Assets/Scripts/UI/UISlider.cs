@@ -21,13 +21,18 @@ namespace UI.UIElements
             {
                 if (m_Value != value)
                 {
-                    m_Value = value;
-                    UpdateUI();
-                    OnChangeValue.Invoke(value);
+                    if (!isClicked) ChangeValue(value);
                 }
             }
 
             get => m_Value;
+        }
+
+        public void ChangeValue(float value)
+        {
+            m_Value = value;
+            UpdateUI();
+            if (isClicked) OnChangeValue.Invoke(value);
         }
         
         public override void Initialize()
@@ -44,7 +49,8 @@ namespace UI.UIElements
 
         private void OnMouseDrag()
         {
-            Value = ClampValue(m_Value + Camera.main.ScreenToWorldPoint(Input.mousePosition).x - lastYPos);
+            isClicked = true;
+            ChangeValue(ClampValue(m_Value + Camera.main.ScreenToWorldPoint(Input.mousePosition).x - lastYPos));
             lastYPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         }
 

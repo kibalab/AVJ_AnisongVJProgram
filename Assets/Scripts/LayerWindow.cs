@@ -1,5 +1,6 @@
 using System;
 using AVJ.UIElements;
+using UI.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -19,6 +20,7 @@ namespace AVJ
         public GameObject ErrorPanel;
 
         public RawImage PreviewScreen;
+        public UISlider Timeline;
 
         public VideoPlayer player;
         
@@ -33,7 +35,7 @@ namespace AVJ
 
                 if (((Layer) layer).Type == LayerType.Video)
                 {
-                    player = CopyComponent(((VideoLayer) layer).player);
+                    player = SetComponent<VideoPlayer>();
                     player.url = ((VideoLayer) layer).player.url;
                     player.isLooping = true;
 
@@ -51,10 +53,23 @@ namespace AVJ
         private void LateUpdate()
         {
             if(!player) return;
+            Timeline.Value = (float) (player.time / player.length);
             
             PreviewScreen.texture = player.texture;
             
             player.playbackSpeed = ((VideoLayer) layer).player.playbackSpeed;
+        }
+
+        public void SetSyncedPlayTime()
+        {
+            player.time = ((VideoLayer) layer).player.time;
+        }
+
+        public void SetPlayTime(float timePer)
+        {
+            player.time = player.length * timePer;
+            if (Input.GetKey(KeyCode.LeftAlt))
+                ((VideoLayer) layer).player.time = ((VideoLayer) layer).player.length * timePer;
         }
 
         public void SwitchPanel(bool b)
@@ -69,36 +84,13 @@ namespace AVJ
             SwitchPanel(layer);
         }
 
-        public void SetAlpha(float alpha)
-        {
-            layer.UIObject.color = new Color(layer.UIObject.color.r, layer.UIObject.color.g, layer.UIObject.color.b, alpha);
-        }
+        public void SetAlpha(float alpha) => layer.UIObject.color = new Color(layer.UIObject.color.r, layer.UIObject.color.g, layer.UIObject.color.b, alpha);
         
-        public void SetVolume(float volume)
-        {
-            ((VideoLayer) layer).player.SetDirectAudioVolume(0, volume);
-        }
+        public void SetVolume(float volume) => ((VideoLayer) layer).player.SetDirectAudioVolume(0, volume);
 
         public void SetGrayScale(float grayScale)
-        {
-            
-        }
-        
-        public void SetPlaySpeed(float speed)
-        {
-            ((VideoLayer) layer).player.playbackSpeed = speed * 2;
-        }
-        
-        public T CopyComponent<T>(T original) where T : Component
-        {
-            Type type = original.GetType();
-            Component copy = SetComponent<T>();
-            System.Reflection.FieldInfo[] fields = type.GetFields();
-            foreach (System.Reflection.FieldInfo field in fields)
-            {
-                field.SetValue(copy, field.GetValue(original));
-            }
-            return copy as T;
-        }
+        {  }
+
+        public void SetPlaySpeed(float speed) => ((VideoLayer) layer).player.playbackSpeed = speed * 2;
     }
 }   
