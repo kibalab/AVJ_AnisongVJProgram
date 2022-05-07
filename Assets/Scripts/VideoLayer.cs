@@ -10,11 +10,9 @@ public class VideoLayer : Layer, IUIInitializer
 {
     public VideoPlayer player;
 
-    public List<CuePoint> CuePoints = new List<CuePoint>();
-
     public void Initialize()
     {
-        Type = LayerType.Video;
+        Data.Type = LayerType.Video;
         InitLayer(true); // Layer Initialize Codes
         InitScaler();
         InitPlayer();

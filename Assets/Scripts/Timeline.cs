@@ -21,11 +21,11 @@ public class Timeline : InterectableUI, IUIInitializer
     
     public void Initialize()
     {
-        Title.text = $"[{layer.Type.ToString()}] {layer.gameObject.name}";
+        Title.text = $"[{layer.Data.Type.ToString()}] {layer.gameObject.name}";
         InitTimeline();
         LayoutController = SetComponent<LayoutElement>();
         
-        if (layer.Type == LayerType.Image && UIObject)
+        if (layer.Data.Type == LayerType.Image && UIObject)
         {
             View.texture = (Texture2D)layer.media;
         }
@@ -134,7 +134,7 @@ public class Timeline : InterectableUI, IUIInitializer
     // Update is called once per frame
     public void FixedUpdate()
     {
-        if(layer) if (layer.Type == LayerType.Video && UIObject)
+        if(layer) if (layer.Data.Type == LayerType.Video && UIObject)
         {
             View.texture = ((RawImage)((VideoLayer)layer).UIObject).texture;
         }

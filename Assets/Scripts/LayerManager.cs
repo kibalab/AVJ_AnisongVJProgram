@@ -42,6 +42,8 @@ public class LayerManager : MonoBehaviour
         if (typeof(T) == typeof(VideoLayer)) AddedLayer.media = path;
         else AddedLayer.media = LoadImage(path);
 
+        AddedLayer.Data.sourcePath = path;
+
         var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
         var timelineConponent = timeline.GetComponent<Timeline>();
         

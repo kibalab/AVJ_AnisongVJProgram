@@ -36,7 +36,7 @@ namespace AVJ
                 Title.text = value.gameObject.name;
                 SwitchPanel(value);
 
-                if (((Layer) layer).Type == LayerType.Video)
+                if (((Layer) layer).Data.Type == LayerType.Video)
                 {
                     player = SetComponent<VideoPlayer>();
                     player.url = ((VideoLayer) layer).player.url;
@@ -71,11 +71,11 @@ namespace AVJ
         
         public void SetCue(float Time)
         {
-            if (((Layer) layer).Type != LayerType.Video) return;
+            if (((Layer) layer).Data.Type != LayerType.Video) return;
             var newCue = Instantiate(CuePrefab, CuePanel.transform).GetComponent<CuePoint>();
             newCue.Time = Time;
             newCue.window = this;
-            ((VideoLayer)layer).CuePoints.Add(newCue);
+            ((VideoLayer)layer).Data.CuePoints.Add(newCue);
             UIUtility.InitializeUI(newCue);
         }
 

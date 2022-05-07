@@ -1,11 +1,14 @@
+using System;
 using AVJ.UIElements;
 using UnityEngine;
 
 namespace AVJ
 {
+    [Serializable]
     public class CuePoint : UIButton
     {
-        public float Time;
+        [SerializeField] public string Name = "";
+        [SerializeField] public float Time;
         public LayerWindow window;
 
         public override void Initialize()

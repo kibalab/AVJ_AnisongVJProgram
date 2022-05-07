@@ -9,7 +9,7 @@ public class ImageLayer : Layer, IUIInitializer
 
     public void Initialize()
     {
-        Type = LayerType.Image;
+        Data.Type = LayerType.Image;
         InitLayer(true); // Layer Initialize Codes
         InitScaler();
         SetImage((Texture2D)media);

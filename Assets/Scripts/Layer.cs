@@ -10,9 +10,20 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
+[Serializable]
+public struct LayerData
+{
+    [SerializeField] public LayerType Type;
+    [SerializeField] public string sourcePath;
+    [SerializeField] public string layerName;
+    [SerializeField] public Vector2 layerPosition;
+    [SerializeField] public Vector2 layerScale;
+    [SerializeField] public List<CuePoint> CuePoints;
+}
+
 public class Layer : InterectableUI, IUIInitializer
 {
-    public LayerType Type = LayerType.Layer;
+    public LayerData Data = new LayerData();
     
     private Outline OutlineEffect;
 
@@ -23,7 +34,6 @@ public class Layer : InterectableUI, IUIInitializer
     public object media;
 
     public TimelineGroup Group = null;
-    
 
     public void Initialize()
     {
@@ -42,6 +52,7 @@ public class Layer : InterectableUI, IUIInitializer
         if(ResizeCollider) Size = rectTransform.sizeDelta;
         
         Debug.Log($"[Layer, {gameObject.name}] Initializing Layer");
+        Data.layerName = gameObject.name;
     }
 
     public void InitScaler()
@@ -59,7 +70,7 @@ public class Layer : InterectableUI, IUIInitializer
         {
             if (text.gameObject.name == "Title")
             {
-                text.text = $"[{Type.ToString()}] {gameObject.name}";
+                text.text = $"[{Data.Type.ToString()}] {Data.layerName}";
             }
         }
     }
@@ -69,8 +80,6 @@ public class Layer : InterectableUI, IUIInitializer
     public void Update()
     {
         base.Update();
-        
-        
 
         if (IsHovered)
         {
@@ -80,6 +89,10 @@ public class Layer : InterectableUI, IUIInitializer
         DrawRectScaler(overlayActiveTime >= 0);
 
         overlayActiveTime -= Time.deltaTime;
+        
+
+        Data.layerPosition = rectTransform.localPosition;
+        Data.layerScale = rectTransform.sizeDelta;
     }
 
     public override void OnUIDrag(IDragDropHandler UIConponent)
