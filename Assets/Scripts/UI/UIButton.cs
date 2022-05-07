@@ -64,7 +64,7 @@ namespace AVJ.UIElements
             LayerImage.color = OriginColor;
         }
         
-        public void Click() => OnClick.Invoke();
+        public virtual void Click() => OnClick.Invoke();
         
 
         public T SetComponent<T>() where T : Component

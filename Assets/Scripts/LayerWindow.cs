@@ -67,6 +67,8 @@ namespace AVJ
 
         public void SetPlayTime(float timePer)
         {
+            Debug.LogError($"[LayerWindow] VideoPlayer Movde Time to {timePer}");
+            
             player.time = player.length * timePer;
             if (Input.GetKey(KeyCode.LeftAlt))
                 ((VideoLayer) layer).player.time = ((VideoLayer) layer).player.length * timePer;
