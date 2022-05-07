@@ -19,6 +19,9 @@ namespace AVJ
         public GameObject SettingPanel;
         public GameObject ErrorPanel;
 
+        public GameObject CuePanel;
+        public GameObject CuePrefab;
+
         public RawImage PreviewScreen;
         public UISlider Timeline;
 
@@ -53,11 +56,17 @@ namespace AVJ
         private void LateUpdate()
         {
             if(!player) return;
+            
             Timeline.Value = (float) (player.time / player.length);
             
             PreviewScreen.texture = player.texture;
             
             player.playbackSpeed = ((VideoLayer) layer).player.playbackSpeed;
+        }
+
+        public void SetCue()
+        {
+            
         }
 
         public void SetSyncedPlayTime()
