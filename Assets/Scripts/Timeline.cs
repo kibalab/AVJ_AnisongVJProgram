@@ -18,7 +18,7 @@ public class Timeline : InterectableUI, IUIInitializer
     public RawImage View;
 
     public Vector3 lastPos;
-
+    
     public void Initialize()
     {
         Title.text = $"[{layer.Type.ToString()}] {layer.gameObject.name}";

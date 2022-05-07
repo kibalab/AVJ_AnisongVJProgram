@@ -24,7 +24,6 @@ public class Layer : InterectableUI, IUIInitializer
 
     public TimelineGroup Group = null;
     
-    
 
     public void Initialize()
     {

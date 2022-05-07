@@ -1,4 +1,6 @@
-﻿using AVJ.UIElements;
+﻿using System.Collections.Generic;
+using AVJ;
+using AVJ.UIElements;
 using UnityEngine;
 using UnityEngine.Experimental.Video;
 using UnityEngine.UI;
@@ -7,6 +9,8 @@ using UnityEngine.Video;
 public class VideoLayer : Layer, IUIInitializer
 {
     public VideoPlayer player;
+
+    public List<CuePoint> CuePoints = new List<CuePoint>();
 
     public void Initialize()
     {

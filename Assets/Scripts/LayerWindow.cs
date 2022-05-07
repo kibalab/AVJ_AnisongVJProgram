@@ -64,9 +64,19 @@ namespace AVJ
             player.playbackSpeed = ((VideoLayer) layer).player.playbackSpeed;
         }
 
-        public void SetCue()
+        public void AddNewCue()
         {
-            
+            SetCue(Timeline.Value);
+        }
+        
+        public void SetCue(float Time)
+        {
+            if (((Layer) layer).Type != LayerType.Video) return;
+            var newCue = Instantiate(CuePrefab, CuePanel.transform).GetComponent<CuePoint>();
+            newCue.Time = Time;
+            newCue.window = this;
+            ((VideoLayer)layer).CuePoints.Add(newCue);
+            UIUtility.InitializeUI(newCue);
         }
 
         public void SetSyncedPlayTime()
