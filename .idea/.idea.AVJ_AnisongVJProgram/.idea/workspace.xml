@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commit Scene">
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Add Layer Selector for MIDI, Change LayerSetting Window Design">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimelineGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimelineGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UISlider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TimeLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TimeLine.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +24,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/TimeLine.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UISlider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/MIDI/BindMidi.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/MIDI/BindMidi.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIButton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/TimelineGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/InputManager.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/Settings/Setting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIButton.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -108,7 +104,9 @@
       <workItem from="1651130190490" duration="14583000" />
       <workItem from="1651254559746" duration="779000" />
       <workItem from="1651623707725" duration="10216000" />
-      <workItem from="1651716356126" duration="15361000" />
+      <workItem from="1651716356126" duration="16506000" />
+      <workItem from="1651823134515" duration="6518000" />
+      <workItem from="1651862121209" duration="6216000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Repo">
       <created>1650520344557</created>
@@ -362,7 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651725941761</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add LayerWindow Info/Setting Editor, Add Midi Event">
+      <created>1651739405145</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1651739405145</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add Layer Selector for MIDI, Change LayerSetting Window Design">
+      <created>1651898541527</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1651898541527</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,8 +396,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add Window.cs, ImageLayer.cs, Splite Render Screen &amp; Control UI" />
-    <MESSAGE value="Commit ImageLayer.cs" />
     <MESSAGE value="Add UIButton, Trying make LayerManager.cs" />
     <MESSAGE value="Commit Workspace data" />
     <MESSAGE value="Add Drag&amp;Drop(Use Bunny83's Script), Only worked Video Import&#10;Bunny83's repo : https://github.com/Bunny83/UnityWindowsFileDrag-Drop" />
@@ -409,6 +419,8 @@
     <MESSAGE value="Restructuring Input Binding Interfaces, Add Binder" />
     <MESSAGE value="Remove MidiJack, Import Minis, Add UISlider" />
     <MESSAGE value="Commit Scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Scene" />
+    <MESSAGE value="Add LayerWindow Info/Setting Editor, Add Midi Event" />
+    <MESSAGE value="Add Layer Selector for MIDI, Change LayerSetting Window Design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Layer Selector for MIDI, Change LayerSetting Window Design" />
   </component>
 </project>
