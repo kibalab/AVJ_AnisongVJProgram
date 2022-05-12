@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using AVJ.UIElements;
 using UI.UIElements;
 using UnityEngine;
@@ -15,6 +16,9 @@ namespace AVJ
     public class LayerWindow : Window
     {
         public InterectableUI layer;
+
+        public CueWindow CueWindow;
+        
         public Text Title;
         public GameObject SettingPanel;
         public GameObject ErrorPanel;
@@ -36,6 +40,9 @@ namespace AVJ
                 Title.text = value.gameObject.name;
                 SwitchPanel(value);
 
+                CueWindow.layer = (Layer)value;
+                CueWindow.Initialize();
+
                 if (((Layer) layer).Data.Type == LayerType.Video)
                 {
                     player = SetComponent<VideoPlayer>();
@@ -50,6 +57,9 @@ namespace AVJ
                     player.started += OnPlayerOnstarted;
                     player.Play();
                 }
+
+                ReDrawCuePoints();
+
             }
         }
 
@@ -66,17 +76,58 @@ namespace AVJ
 
         public void AddNewCue()
         {
-            SetCue(Timeline.Value);
+            if (((VideoLayer)layer).Data.CuePoints.Count >= 20) return;
+            
+            
+            CreateCue(Timeline.Value);
+            SortCues();
+            ReDrawCuePoints();
+            CueWindow.Initialize();
         }
-        
-        public void SetCue(float Time)
+
+        private void CreateCue(float Time)
+        {
+            var newCue = new CueData("", Time);
+            ((VideoLayer)layer).Data.CuePoints.Add(newCue);
+        }
+
+        public void ReDrawCuePoints()
+        {
+            ClearCuePoints();
+            DrawCuePoints();
+        }
+
+        public void ClearCuePoints()
+        {
+            for (int i = 0; i < CuePanel.transform.childCount; i++)
+            {
+                Destroy(CuePanel.transform.GetChild(i).gameObject);
+            }
+            foreach (var cue in ((VideoLayer) layer).Data.CuePoints)
+            {
+                if(cue.Point == null) continue;
+                Destroy(cue.Point.gameObject);
+                cue.Point = null;
+            }
+        }
+
+        public void DrawCuePoints()
         {
             if (((Layer) layer).Data.Type != LayerType.Video) return;
-            var newCue = Instantiate(CuePrefab, CuePanel.transform).GetComponent<CuePoint>();
-            newCue.Time = Time;
-            newCue.window = this;
-            ((VideoLayer)layer).Data.CuePoints.Add(newCue);
-            UIUtility.InitializeUI(newCue);
+            
+            foreach (var cue in ((VideoLayer) layer).Data.CuePoints)
+            {
+                var newCuePoint = Instantiate(CuePrefab, CuePanel.transform).GetComponent<CuePoint>();
+                newCuePoint.Cue = cue;
+                newCuePoint.Cue.Point = newCuePoint;
+                newCuePoint.window = this;
+                UIUtility.InitializeUI(newCuePoint);
+            }
+        }
+
+        private void SortCues()
+        {
+            ((VideoLayer) layer).Data.CuePoints = ((VideoLayer) layer).Data.CuePoints.OrderBy(x => x.Time).ToList();
         }
 
         public void SetSyncedPlayTime()

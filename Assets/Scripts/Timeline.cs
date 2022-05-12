@@ -27,7 +27,7 @@ public class Timeline : InterectableUI, IUIInitializer
         
         if (layer.Data.Type == LayerType.Image && UIObject)
         {
-            View.texture = (Texture2D)layer.media;
+            //View.texture = (Texture2D)layer.media;
         }
         
         IsReady = true;

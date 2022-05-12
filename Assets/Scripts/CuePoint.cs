@@ -1,19 +1,20 @@
 using System;
+using AVJ.Settings;
 using AVJ.UIElements;
 using UnityEngine;
 
 namespace AVJ
 {
-    [Serializable]
     public class CuePoint : UIButton
     {
-        [SerializeField] public string Name = "";
-        [SerializeField] public float Time;
+        public CueData Cue;
+        public Setting Binder;
         public LayerWindow window;
 
         public override void Initialize()
         {
             UpdateCuePosition();
+            Binder.bind = Cue.Key;
         }
 
         public void UpdateCuePosition()
@@ -22,12 +23,12 @@ namespace AVJ
             rectTransform.anchorMax = new Vector2(0, 1);
             rectTransform.pivot = new Vector2(0, 0.5f);
             
-            rectTransform.anchoredPosition = new Vector3(((RectTransform) rectTransform.parent).rect.width * Time, 0);
+            rectTransform.anchoredPosition = new Vector3(((RectTransform) rectTransform.parent).rect.width * Cue.Time, 0);
         }
 
         public override void Click()
         {
-            window.SetPlayTime(Time);
+            window.SetPlayTime(Cue.Time);
         }
     }
 }

@@ -29,6 +29,7 @@ public class VideoLayer : Layer, IUIInitializer
         player.isLooping = true;
     }
 
+    
     public void PlayClip(string media)
     {
         this.media = media;

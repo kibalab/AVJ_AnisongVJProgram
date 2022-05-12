@@ -18,7 +18,7 @@ public struct LayerData
     [SerializeField] public string layerName;
     [SerializeField] public Vector2 layerPosition;
     [SerializeField] public Vector2 layerScale;
-    [SerializeField] public List<CuePoint> CuePoints;
+    [SerializeField] public List<CueData> CuePoints;
 }
 
 public class Layer : InterectableUI, IUIInitializer
@@ -53,6 +53,8 @@ public class Layer : InterectableUI, IUIInitializer
         
         Debug.Log($"[Layer, {gameObject.name}] Initializing Layer");
         Data.layerName = gameObject.name;
+
+        Data.CuePoints = new List<CueData>();
     }
 
     public void InitScaler()

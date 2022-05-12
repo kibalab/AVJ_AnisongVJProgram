@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 namespace AVJ.Settings
 {
+    [Serializable]
     public class Midi
     {
         public int Channel;
@@ -39,8 +40,19 @@ namespace AVJ.Settings
         public UnityEvent<float> OnChangeFloat = new UnityEvent<float>();
         public UnityEvent<bool> OnChangeBool = new UnityEvent<bool>();
 
-        public Midi bind = new Midi(-1, -1, 0);
+        public Midi m_bind = new Midi(-1, -1, 0);
 
+        public Midi bind
+        {
+            set
+            {
+                m_bind = value;
+                BindState.text = value.Note.ToString();
+            }
+
+            get => m_bind;
+        }
+            
         private void Start()
         {
             SetMidiBind();
@@ -106,7 +118,6 @@ namespace AVJ.Settings
                     {
                         bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.controlNumber, 0);
                         EventManager.BindTarget = null;
-                        BindState.text = note.controlNumber.ToString();
                         return;
                     }
 
@@ -128,7 +139,6 @@ namespace AVJ.Settings
                     {
                         bind = new Midi((note.device as Minis.MidiDevice)?.channel, note.noteNumber, 0);
                         EventManager.BindTarget = null;
-                        BindState.text = note.noteNumber.ToString();
                         return;
                     }
                     
