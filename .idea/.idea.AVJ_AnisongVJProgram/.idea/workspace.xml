@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Commmit Workspace meta file">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs.meta" afterDir="false" />
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueListElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueListElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/CueWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/CueWindow.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CuePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CuePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ImageLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ImageLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/LayerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/LayerWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
@@ -32,45 +35,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/TimeLine.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIButton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Timeline.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UIButton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UISlider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/InputManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/Settings/Setting.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/UISlider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,28 +105,10 @@
       <workItem from="1651623707725" duration="10216000" />
       <workItem from="1651716356126" duration="16506000" />
       <workItem from="1651823134515" duration="6518000" />
-      <workItem from="1651862121209" duration="17250000" />
-    </task>
-    <task id="LOCAL-00002" summary="Commit New Unity Project Files">
-      <created>1650520404987</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1650520404987</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add Dragable Layer object">
-      <created>1650523160782</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1650523160782</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Commit Scene">
-      <created>1650523184480</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1650523184480</updated>
+      <workItem from="1651862121209" duration="18097000" />
+      <workItem from="1651992048677" duration="4865000" />
+      <workItem from="1652059776388" duration="7712000" />
+      <workItem from="1652679598116" duration="4272000" />
     </task>
     <task id="LOCAL-00005" summary="Add Resize Controller &amp; Pivot Resiz system">
       <created>1650534545621</created>
@@ -483,7 +432,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651920274976</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Change class Serializable property for save file, Add Cue Element(TODO)">
+      <created>1651924170298</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1651924170298</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Commit Scene, Add Cue list">
+      <created>1651924198214</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1651924198214</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Change Directory Window.cs, LayerWindow.cs to Script/UI/Windows">
+      <created>1651992174420</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1651992174421</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,9 +475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add Drag&amp;Drop Move list at Timeline.cs" />
-    <MESSAGE value="Add Image View in Timeline.cs" />
-    <MESSAGE value="Fix TimeLine Prefab for list" />
     <MESSAGE value="Commit Scene, workspace" />
     <MESSAGE value="Fix DragPosition at override functions, Fix Inheritance object cast" />
     <MESSAGE value="Add Timelines Grouping (NOT STABLED)" />
@@ -530,6 +497,9 @@
     <MESSAGE value="CHange Directories Prefab files" />
     <MESSAGE value="WIP Hot Cue, ADD Cue Adder UI/Functions" />
     <MESSAGE value="Commmit Workspace meta file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commmit Workspace meta file" />
+    <MESSAGE value="Change class Serializable property for save file, Add Cue Element(TODO)" />
+    <MESSAGE value="Commit Scene, Add Cue list" />
+    <MESSAGE value="Change Directory Window.cs, LayerWindow.cs to Script/UI/Windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Directory Window.cs, LayerWindow.cs to Script/UI/Windows" />
   </component>
 </project>
