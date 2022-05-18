@@ -5,8 +5,10 @@ using System.IO;
 using System.Linq;
 using AVJ.UIElements;
 using B83.Win32;
+using Shibuya24.Utility;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public enum LayerType
 {
@@ -25,6 +27,7 @@ public class LayerManager : MonoBehaviour
     public GameObject TimelinePrefab;
     public Transform WindowField;
 
+    Regex rx = new Regex(".mp4|.mov");
 
     public Layer AddLayer<T>(string name, string path) where T : Layer
     {
@@ -57,29 +60,58 @@ public class LayerManager : MonoBehaviour
 
     void OnEnable ()
     {
-        // must be installed on the main thread to get the right thread id.
-        UnityDragAndDropHook.InstallHook();
-        UnityDragAndDropHook.OnDroppedFiles += OnFiles;
+        string operatingSystem = SystemInfo.operatingSystem;
+        Debug.Log("OS: " + operatingSystem);
+
+        if (operatingSystem.Contains("Windows"))
+        {
+            // must be installed on the main thread to get the right thread id.
+            UnityDragAndDropHook.InstallHook();
+            UnityDragAndDropHook.OnDroppedFiles += OnFilesWindows;
+        }
+        else if (operatingSystem.Contains("Mac"))
+        {
+            //TODO 여러 파일 지원해야 함. 현재 2개 이상 파일을 올릴 경우 튕김
+            UniDragAndDrop.onDragAndDropFilePath = x =>
+            {
+                OnFilesMacOS(x);
+            };
+
+            UniDragAndDrop.Initialize();
+        }
     }
     void OnDisable()
     {
         UnityDragAndDropHook.UninstallHook();
     }
-    void OnFiles(List<string> aFiles, POINT aPos)
+    void OnFilesWindows(List<string> aFiles, POINT aPos)
     {
         string str = "Dropped " + aFiles.Count + " files at: " + aPos + "\n\t" +
                      aFiles.Aggregate((a, b) => a + "\n\t" + b);
         Debug.Log(str);
-        
+
+
         foreach (var afile in aFiles)
         {
-            if(Path.GetExtension(afile) == ".mp4")
+            if (rx.IsMatch(Path.GetExtension(afile)))
+                    AddLayer<VideoLayer>(Path.GetFileName(afile), afile);
+            else
+                AddLayer<ImageLayer>(Path.GetFileName(afile), afile);
+        }
+    }
+    void OnFilesMacOS(string afile) {
+        
+        string str = "Dropped a file at: " + afile;
+        Debug.Log(str);
+
+        { // 초기 테스트 (복수 파일은 API 수정 필요해 보임)
+            if (rx.IsMatch(Path.GetExtension(afile)))
                 AddLayer<VideoLayer>(Path.GetFileName(afile), afile);
             else
                 AddLayer<ImageLayer>(Path.GetFileName(afile), afile);
         }
     }
-    
+
     private Texture2D LoadImage(string path)
 
     {
