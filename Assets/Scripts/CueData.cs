@@ -6,14 +6,14 @@ using UnityEngine;
 namespace AVJ
 {
     [Serializable]
-    public class CueData : Behaviour
+    public class CueData
     {
         [SerializeField] public float Time = 0.0f;
         [SerializeField] public string Name = "";
         [SerializeField] public Midi Key;
 
-        public CuePoint Point;
-        public CueListElement Element;
+        [NonSerialized] public CuePoint Point;
+        [NonSerialized] public CueListElement Element;
 
         public CueData(string Name, float Time)
         {
@@ -24,9 +24,7 @@ namespace AVJ
         public void DeleteCue()
         {
             ((Layer) LayerWindowUtil.window.layer).Data.CuePoints.Remove(this);
-            Destroy(Element.gameObject);
-            Destroy(Point.gameObject);
-            
+            Point.Cue = null;
         }
     }
 }

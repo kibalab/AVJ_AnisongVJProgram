@@ -37,13 +37,15 @@ public class VideoLayer : Layer, IUIInitializer
         player.url = media;
         player.SetDirectAudioVolume(0, 0);
         player.Play();
-
+        
         player.started += StartVideo;
     }
 
     public void StartVideo(VideoPlayer source)
     {
         Debug.Log($"[VideoLayer] Size Ratio : ({source.texture.width}, {source.texture.height})");
+        rectTransform.localPosition = rectTransform.parent.localScale;
+        rectTransform.sizeDelta = new Vector2(((RectTransform)rectTransform.parent).sizeDelta.y, ((RectTransform)rectTransform.parent).sizeDelta.y);
         ScalingToRatio(new Vector2(source.texture.width, source.texture.height));
         UIObject.color = Color.white;
     }

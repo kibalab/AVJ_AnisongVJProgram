@@ -8,6 +8,7 @@ namespace UI
 {
     public class CueListElement : UIButton
     {
+        public Layer layer;
         public Image Background;
         private CueData m_Cue;
         public Text Title;
@@ -31,7 +32,7 @@ namespace UI
 
         private void Update()
         {
-            if(!LayerWindowUtil.window || !LayerWindowUtil.window.player) return;
+            if(!LayerWindowUtil.window || !LayerWindowUtil.window.player || m_Cue == null) return;
             if (LayerWindowUtil.window.player.time > m_Cue.Time * LayerWindowUtil.window.player.length)
             {
                 Background.color = Color.black;
@@ -49,11 +50,14 @@ namespace UI
 
         public void DeleteCue()
         {
-            if (!m_Cue)
+            if (m_Cue == null)
             {
                 Debug.LogError("[CueListElement] Can not find cue!");
             }
             m_Cue.DeleteCue();
+            m_Cue = null;
+            Destroy(gameObject);
+            layer.Data.SaveData();
         }
         
     }

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using AVJ;
+using AVJ.Control;
+using AVJ.Data;
 using AVJ.UIElements;
 using UnityEditor;
 using UnityEngine;
@@ -11,14 +13,43 @@ using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 [Serializable]
-public struct LayerData
+public class LayerData
 {
     [SerializeField] public LayerType Type;
     [SerializeField] public string sourcePath;
     [SerializeField] public string layerName;
-    [SerializeField] public Vector2 layerPosition;
-    [SerializeField] public Vector2 layerScale;
+    [SerializeField] public SerializableVector2 layerPosition = new Vector2(0, 0);
+    [SerializeField] public SerializableVector2 layerScale = new Vector2(0, 0);
     [SerializeField] public List<CueData> CuePoints;
+
+    public void LoadData()
+    {
+         var loadedData = DataFileManager.Load<LayerData>(layerName, "layer");
+         if (loadedData == null)
+         {
+             
+             return;
+         }
+         
+         Type = loadedData.Type;
+         sourcePath = loadedData.sourcePath;
+         layerName = loadedData.layerName;
+         layerPosition = loadedData.layerPosition;
+         layerScale = loadedData.layerScale;
+         CuePoints = loadedData.CuePoints;
+         
+         Debug.LogError($"[LayerData] LoadData : {ToString()}");
+    }
+
+    public void SaveData()
+    {
+        DataFileManager.Save(layerName, this,"layer");
+    }
+
+    public override string ToString()
+    {
+        return $"{Type}, {sourcePath}, {layerName}, {layerPosition}, {layerScale}, CuePoints({CuePoints.Count})";
+    }
 }
 
 public class Layer : InterectableUI, IUIInitializer
@@ -38,8 +69,11 @@ public class Layer : InterectableUI, IUIInitializer
     public void Initialize()
     {
         InitLayer(true);
+        
+        Data.LoadData();
 
         IsReady = true;
+        
     }
 
     public void InitLayer(bool ResizeCollider)

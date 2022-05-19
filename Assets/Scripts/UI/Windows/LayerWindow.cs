@@ -27,7 +27,8 @@ namespace AVJ
         public GameObject CuePrefab;
 
         public RawImage PreviewScreen;
-        public UISlider Timeline;
+        public UISlider PreviewTimeline;
+        public UISlider LayerTimeline;
 
         public VideoPlayer player;
         
@@ -67,7 +68,9 @@ namespace AVJ
         {
             if(!player) return;
             
-            Timeline.Value = (float) (player.time / player.length);
+            PreviewTimeline.Value = (float) (player.time / player.length);
+            
+            LayerTimeline.Value =  (float) (((VideoLayer) layer).player.time / ((VideoLayer) layer).player.length);
             
             PreviewScreen.texture = player.texture;
             
@@ -79,10 +82,11 @@ namespace AVJ
             if (((VideoLayer)layer).Data.CuePoints.Count >= 20) return;
             
             
-            CreateCue(Timeline.Value);
+            CreateCue(PreviewTimeline.Value);
             SortCues();
             ReDrawCuePoints();
             CueWindow.Initialize();
+            ((Layer)layer).Data.SaveData();
         }
 
         private void CreateCue(float Time)
