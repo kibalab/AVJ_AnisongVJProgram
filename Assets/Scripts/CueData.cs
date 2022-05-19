@@ -25,6 +25,8 @@ namespace AVJ
         {
             ((Layer) LayerWindowUtil.window.layer).Data.CuePoints.Remove(this);
             Point.Cue = null;
+            Element.Cue = null;
+            
         }
     }
 }

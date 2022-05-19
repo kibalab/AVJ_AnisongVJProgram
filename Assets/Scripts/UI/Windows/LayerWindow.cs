@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using a;
 using AVJ.UIElements;
 using UI.UIElements;
 using UnityEngine;
@@ -58,9 +59,8 @@ namespace AVJ
                     player.started += OnPlayerOnstarted;
                     player.Play();
                 }
-
+                
                 ReDrawCuePoints();
-
             }
         }
 
@@ -70,29 +70,63 @@ namespace AVJ
             
             PreviewTimeline.Value = (float) (player.time / player.length);
             
-            LayerTimeline.Value =  (float) (((VideoLayer) layer).player.time / ((VideoLayer) layer).player.length);
+            if(!layer) return;
             
             PreviewScreen.texture = player.texture;
             
+            LayerTimeline.Value =  (float) (((VideoLayer) layer).player.time / ((VideoLayer) layer).player.length);
+            
+            
             player.playbackSpeed = ((VideoLayer) layer).player.playbackSpeed;
+            
+            if(EventManager.CueEvents.Count <= 0) return;
+
+            var cueEvent = EventManager.CueEvents.Dequeue();
+
+            switch (cueEvent.Type)
+            {
+                case CueEventType.Add :
+                    CueWindow.Initialize();
+                    SortCues();
+                    ((Layer)layer).Data.SaveData();
+                    ReDrawCuePoints();
+                    break;
+                
+                case CueEventType.Delete :
+                    cueEvent.Cue.DeleteCue();
+                    CueWindow.Initialize();
+                    SortCues();
+                    ((Layer)layer).Data.SaveData();
+                    ReDrawCuePoints();
+                    break;
+                
+                case CueEventType.Move :
+                    SortCues();
+                    ((Layer)layer).Data.SaveData();
+                    ReDrawCuePoints();
+                    break;
+                
+                default:
+                    break;
+            }
         }
 
         public void AddNewCue()
         {
             if (((VideoLayer)layer).Data.CuePoints.Count >= 20) return;
             
-            
-            CreateCue(PreviewTimeline.Value);
-            SortCues();
-            ReDrawCuePoints();
-            CueWindow.Initialize();
-            ((Layer)layer).Data.SaveData();
+            var e = new CueEvent();
+            e.Cue = CreateCue(PreviewTimeline.Value);
+            e.Type = CueEventType.Add;
+            EventManager.CueEvents.Enqueue(e);
         }
 
-        private void CreateCue(float Time)
+        private CueData CreateCue(float Time)
         {
             var newCue = new CueData("", Time);
             ((VideoLayer)layer).Data.CuePoints.Add(newCue);
+
+            return newCue;
         }
 
         public void ReDrawCuePoints()

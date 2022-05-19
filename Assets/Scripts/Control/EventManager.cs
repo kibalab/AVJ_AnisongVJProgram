@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using a;
 using AVJ.Control;
 using AVJ.Settings;
 using UnityEngine;
 
 public static class EventManager
 {
-    public static Queue<LayerEvent> Events = new Queue<LayerEvent>();
+    public static Queue<LayerEvent> LayerEvents = new Queue<LayerEvent>();
+
+    public static Queue<CueEvent> CueEvents = new Queue<CueEvent>();
 
     private static IBindableHandler m_BindTarget = null;
 
@@ -21,5 +24,5 @@ public static class EventManager
         get => m_BindTarget;
     }
 
-    public static void Clear() => Events = new Queue<LayerEvent>();
+    public static void Clear() => LayerEvents = new Queue<LayerEvent>();
 }

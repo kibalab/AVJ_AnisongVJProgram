@@ -66,8 +66,9 @@ public class Layer : InterectableUI, IUIInitializer
 
     public TimelineGroup Group = null;
 
-    public void Initialize()
+    public virtual void Initialize()
     {
+        // Currently not used
         InitLayer(true);
         
         Data.LoadData();
@@ -76,9 +77,8 @@ public class Layer : InterectableUI, IUIInitializer
         
     }
 
-    public void InitLayer(bool ResizeCollider)
+    public virtual void InitLayer(bool ResizeCollider)
     {
-        // Outline Component Vailed Check
         if (!OutlineEffect) OutlineEffect = SetComponent<Outline>();
         if (!UIObject) UIObject = SetComponent<RawImage>();
         if (!collider) collider = SetComponent<BoxCollider2D>();

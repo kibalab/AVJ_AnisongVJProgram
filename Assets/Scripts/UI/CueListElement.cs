@@ -1,4 +1,5 @@
 using System;
+using a;
 using AVJ;
 using AVJ.UIElements;
 using UnityEngine;
@@ -8,7 +9,6 @@ namespace UI
 {
     public class CueListElement : UIButton
     {
-        public Layer layer;
         public Image Background;
         private CueData m_Cue;
         public Text Title;
@@ -18,8 +18,11 @@ namespace UI
         {
             get => m_Cue;
             set
-            {
+            {                
                 m_Cue = value;
+
+                if (value == null) return;
+                
                 Title.text = value.Name;
                 
                 Debug.LogError($"[CueElement] Set Cue {value.Time}");
@@ -54,10 +57,11 @@ namespace UI
             {
                 Debug.LogError("[CueListElement] Can not find cue!");
             }
-            m_Cue.DeleteCue();
-            m_Cue = null;
-            Destroy(gameObject);
-            layer.Data.SaveData();
+            
+            var e = new CueEvent();
+            e.Cue = m_Cue;
+            e.Type = CueEventType.Delete;
+            EventManager.CueEvents.Enqueue(e);
         }
         
     }

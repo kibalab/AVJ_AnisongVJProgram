@@ -49,7 +49,6 @@ namespace AVJ
             var element = elementObject.GetComponent<CueListElement>();
             cuePoint.Element = element;
             element.Cue = cuePoint;
-            element.layer = layer;
             return element;
         }
     }

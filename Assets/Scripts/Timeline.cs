@@ -126,7 +126,7 @@ public class Timeline : InterectableUI, IUIInitializer
         layerEvent.EventType = LayerEventType.Delete;
         layerEvent.layer = layer;
         
-        EventManager.Events.Enqueue(layerEvent);
+        EventManager.LayerEvents.Enqueue(layerEvent);
         
         Destroy(gameObject);
     }

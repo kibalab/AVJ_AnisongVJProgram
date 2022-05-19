@@ -128,9 +128,9 @@ public class LayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(EventManager.Events.Count <= 0) return;
+        if(EventManager.LayerEvents.Count <= 0) return;
         
-        var layerEvent = EventManager.Events.Dequeue();
+        var layerEvent = EventManager.LayerEvents.Dequeue();
 
         switch (layerEvent.EventType)
         {
