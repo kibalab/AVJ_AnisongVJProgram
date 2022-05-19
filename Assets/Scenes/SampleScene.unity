@@ -22949,6 +22949,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1907157636}
   - component: {fileID: 1907157637}
+  - component: {fileID: 1907157639}
+  - component: {fileID: 1907157638}
   m_Layer: 0
   m_Name: Syphon Server
   m_TagString: Untagged
@@ -22978,12 +22980,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907157634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sourceTexture: {fileID: 8400000, guid: c36e86b5d65068447a97e6c51b16c23f, type: 2}
+  _alphaSupport: 1
+--- !u!114 &1907157638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907157634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebbd773c684414b8aabe2bce00e7287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spout: {fileID: 1907157637}
+  Syphon: {fileID: 1907157639}
+--- !u!114 &1907157639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907157634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59ae4f317f9b4f8b8d64f71768aaea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceTexture: {fileID: 0}
   _alphaSupport: 0
 --- !u!1 &1908254750
 GameObject:
