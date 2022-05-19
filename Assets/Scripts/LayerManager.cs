@@ -71,6 +71,7 @@ public class LayerManager : MonoBehaviour
         }
         else if (operatingSystem.Contains("Mac"))
         {
+            OnFilesMacOS(@"/Users/bada/Movies/2022-04-10 06-58-27.mov");
             //TODO 여러 파일 지원해야 함. 현재 2개 이상 파일을 올릴 경우 튕김
             UniDragAndDrop.onDragAndDropFilePath = x =>
             {

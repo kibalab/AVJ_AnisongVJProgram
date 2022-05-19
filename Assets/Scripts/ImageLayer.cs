@@ -13,7 +13,8 @@ public class ImageLayer : Layer, IUIInitializer
         InitLayer(true); // Layer Initialize Codes
         InitScaler();
         SetImage((Texture2D)media);
-        
+        Data.LoadData();
+
         IsReady = true;
     }
 

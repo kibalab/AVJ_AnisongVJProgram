@@ -26,6 +26,11 @@ namespace AVJ.Control
         {
             FileStream file = null;
             try {
+                DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath + '/' + SaveDir);
+                if (!di.Exists)
+                {
+                    di.Create();
+                }
                 BinaryFormatter bf = new BinaryFormatter();
                 file = File.Open(Application.persistentDataPath + '/' + SaveDir + '/' + String.Format(SaveFileFormat, name, format), FileMode.OpenOrCreate);
                 bf.Serialize(file, obj);
@@ -44,7 +49,7 @@ namespace AVJ.Control
         {
             FileStream file = null;
             try {
-                if (File.Exists (Application.persistentDataPath + String.Format(SaveDir, name, format))) {
+                if (File.Exists (Application.persistentDataPath + '/' + SaveDir + '/' + String.Format(SaveFileFormat, name, format))) {
                     BinaryFormatter bf = new BinaryFormatter ();
                     file = File.Open(Application.persistentDataPath + '/' + SaveDir + '/' + String.Format(SaveFileFormat, name, format), FileMode.Open);
                     var serializableSaveData = bf.Deserialize(file);

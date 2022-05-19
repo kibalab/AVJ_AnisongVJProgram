@@ -17,7 +17,8 @@ public class VideoLayer : Layer, IUIInitializer
         InitScaler();
         InitPlayer();
         PlayClip((string)media);
-        
+        Data.LoadData();
+
         IsReady = true;
     }
 
