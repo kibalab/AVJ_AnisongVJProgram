@@ -146,6 +146,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_bind:
+    Channel: -1
+    Note: -1
+    Value: 0
 --- !u!61 &1922591434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -378,5 +382,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isClicked: 0
-  Time: 0
+  Cue: {fileID: 0}
+  Binder: {fileID: 1284249514199122826}
   window: {fileID: 0}

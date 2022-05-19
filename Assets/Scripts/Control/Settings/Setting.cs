@@ -47,7 +47,7 @@ namespace AVJ.Settings
             set
             {
                 m_bind = value;
-                BindState.text = value.Note.ToString();
+                if(value != null) BindState.text = value.Note.ToString();
             }
 
             get => m_bind;
