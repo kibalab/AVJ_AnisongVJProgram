@@ -8,8 +8,7 @@ public class FileDragAndDrop : MonoBehaviour
 {
     List<string> log = new List<string>();
     void OnEnable ()
-    {
-        // must be installed on the main thread to get the right thread id.
+    {        // must be installed on the main thread to get the right thread id.
         UnityDragAndDropHook.InstallHook();
         UnityDragAndDropHook.OnDroppedFiles += OnFiles;
     }
