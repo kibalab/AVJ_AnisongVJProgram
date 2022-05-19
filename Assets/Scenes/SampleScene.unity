@@ -3921,6 +3921,10 @@ MonoBehaviour:
   OnChangeBool:
     m_PersistentCalls:
       m_Calls: []
+  m_bind:
+    Channel: -1
+    Note: -1
+    Value: 0
 --- !u!114 &429455950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4444,6 +4448,10 @@ MonoBehaviour:
   OnChangeBool:
     m_PersistentCalls:
       m_Calls: []
+  m_bind:
+    Channel: -1
+    Note: -1
+    Value: 0
 --- !u!114 &497082864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7468,7 +7476,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -14286,6 +14294,10 @@ MonoBehaviour:
   OnChangeBool:
     m_PersistentCalls:
       m_Calls: []
+  m_bind:
+    Channel: -1
+    Note: -1
+    Value: 0
 --- !u!114 &1174392253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14486,6 +14498,10 @@ MonoBehaviour:
   OnChangeBool:
     m_PersistentCalls:
       m_Calls: []
+  m_bind:
+    Channel: -1
+    Note: -1
+    Value: 0
 --- !u!114 &1185779348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15452,7 +15468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1366513591}
   - component: {fileID: 1366513589}
-  - component: {fileID: 1366513590}
   m_Layer: 0
   m_Name: Render Camera
   m_TagString: MainCamera
@@ -15503,14 +15518,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1366513590
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366513588}
-  m_Enabled: 0
 --- !u!4 &1366513591
 Transform:
   m_ObjectHideFlags: 0

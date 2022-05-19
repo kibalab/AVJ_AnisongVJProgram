@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueListElement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CueListElement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/CueWindow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/CueWindow.cs.meta" afterDir="false" />
+    <list default="true" id="f7e6f14f-76da-4524-8050-d579180888c9" name="Changes" comment="Add Data File Manager (WIP)">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Control/DataFileManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AVJ_AnisongVJProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CuePoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CuePoint.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Settings/Setting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CuePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CuePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timeline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CueElement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/LayerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/LayerWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +25,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/Settings/Setting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/af/cf78d65c/VideoPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/UI/Windows/LayerWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aac99c56e6534f5090d9443093832fc37600/cd/6b11731b/VideoClip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Control/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Layer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/VideoLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/CuePoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/AVJ_AnisongVJProgram/Assets/Scripts/Timeline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,49 +111,7 @@
       <workItem from="1651862121209" duration="18097000" />
       <workItem from="1651992048677" duration="4865000" />
       <workItem from="1652059776388" duration="7712000" />
-      <workItem from="1652679598116" duration="4272000" />
-    </task>
-    <task id="LOCAL-00005" summary="Add Resize Controller &amp; Pivot Resiz system">
-      <created>1650534545621</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1650534545621</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Commit Scene">
-      <created>1650534577723</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1650534577723</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add Overlay View Timer">
-      <created>1650535337241</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1650535337241</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Set Scaler Auto Initializing, Add Ratio ScalerMode&amp; longitudinal and horizontal ScalerMode">
-      <created>1650879391095</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1650879391095</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add Window.cs, ImageLayer.cs, Splite Render Screen &amp; Control UI">
-      <created>1650901198093</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1650901198093</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Commit ImageLayer.cs">
-      <created>1650902209528</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1650902209528</updated>
+      <workItem from="1652679598116" duration="15412000" />
     </task>
     <task id="LOCAL-00011" summary="Add UIButton, Trying make LayerManager.cs">
       <created>1650933783555</created>
@@ -453,7 +414,49 @@
       <option name="project" value="LOCAL" />
       <updated>1651992174421</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fix Draw CuePoint Rendering not refreshed (When Change Selected Layer)">
+      <created>1652696032760</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1652696032761</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fix Draw CuePoint Rendering not refreshed (When Change Selected Layer)">
+      <created>1652350674002</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1652350674002</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Commit missing scripts on last commit">
+      <created>1652523626465</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1652523626465</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Commit Scene, Workspace">
+      <created>1652610081691</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1652610081691</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Commit Hot Cue Prefab">
+      <created>1652969253486</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1652969253487</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add Data File Manager (WIP)">
+      <created>1652969265533</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1652969265533</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,11 +478,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Commit Scene, workspace" />
-    <MESSAGE value="Fix DragPosition at override functions, Fix Inheritance object cast" />
-    <MESSAGE value="Add Timelines Grouping (NOT STABLED)" />
-    <MESSAGE value="Grouping Stabilization, Move to FindGroup(new Func) at FixedUpdate" />
-    <MESSAGE value="Add Syphon Stream for OBS. Add Change selected window order, Design Layer Effect Window" />
     <MESSAGE value="Migration Unity2019.4 to Unity 2021.1" />
     <MESSAGE value="[NOT WORK, WIP]ADD MIDI System for binding" />
     <MESSAGE value="Add MIDIJack Package, Add Particle resources. Commit MIDI System Scripts" />
@@ -500,6 +498,11 @@
     <MESSAGE value="Change class Serializable property for save file, Add Cue Element(TODO)" />
     <MESSAGE value="Commit Scene, Add Cue list" />
     <MESSAGE value="Change Directory Window.cs, LayerWindow.cs to Script/UI/Windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Directory Window.cs, LayerWindow.cs to Script/UI/Windows" />
+    <MESSAGE value="Fix Draw CuePoint Rendering not refreshed (When Change Selected Layer)" />
+    <MESSAGE value="Commit missing scripts on last commit" />
+    <MESSAGE value="Commit Scene, Workspace" />
+    <MESSAGE value="Commit Hot Cue Prefab" />
+    <MESSAGE value="Add Data File Manager (WIP)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Data File Manager (WIP)" />
   </component>
 </project>
