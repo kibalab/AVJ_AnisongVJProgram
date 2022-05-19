@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1697,8 +1697,12 @@ MonoBehaviour:
     Type: 0
     sourcePath: 
     layerName: 
-    layerPosition: {x: 0, y: 0}
-    layerScale: {x: 0, y: 0}
+    layerPosition:
+      x: 0
+      y: 0
+    layerScale:
+      x: 0
+      y: 0
     CuePoints: []
   overlayActiveTime: 3
   SourceRatio: 1
@@ -8863,8 +8867,12 @@ MonoBehaviour:
     Type: 0
     sourcePath: 
     layerName: 
-    layerPosition: {x: 0, y: 0}
-    layerScale: {x: 0, y: 0}
+    layerPosition:
+      x: 0
+      y: 0
+    layerScale:
+      x: 0
+      y: 0
     CuePoints: []
   overlayActiveTime: 3
   SourceRatio: 1
@@ -10919,7 +10927,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1868997713}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999995
+  m_Size: 0.9999996
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18807,6 +18815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1366513591}
   - component: {fileID: 1366513589}
+  - component: {fileID: 1366513592}
   m_Layer: 0
   m_Name: Render Camera
   m_TagString: MainCamera
@@ -18872,6 +18881,20 @@ Transform:
   m_Father: {fileID: 1053166667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366513592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366513588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59ae4f317f9b4f8b8d64f71768aaea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceTexture: {fileID: 0}
+  _alphaSupport: 0
 --- !u!1 &1367345444
 GameObject:
   m_ObjectHideFlags: 0
@@ -23144,8 +23167,12 @@ MonoBehaviour:
     Type: 0
     sourcePath: 
     layerName: 
-    layerPosition: {x: 0, y: 0}
-    layerScale: {x: 0, y: 0}
+    layerPosition:
+      x: 0
+      y: 0
+    layerScale:
+      x: 0
+      y: 0
     CuePoints: []
   overlayActiveTime: 3
   SourceRatio: 1
