@@ -8,15 +8,6 @@ public static class EventManager
 {
     public static Queue<LayerEvent> Events = new Queue<LayerEvent>();
 
-    /*
-    public static bool IsWaitForBinding
-    {
-        get => BindTarget == null;
-    }
-    
-    public static MidiEvent BindTarget = null;
-    */
-    
     private static IBindableHandler m_BindTarget = null;
 
     public static IBindableHandler BindTarget
