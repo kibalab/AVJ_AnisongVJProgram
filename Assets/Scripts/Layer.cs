@@ -21,6 +21,7 @@ public class LayerData
     [SerializeField] public SerializableVector2 layerPosition = new Vector2(0, 0);
     [SerializeField] public SerializableVector2 layerScale = new Vector2(0, 0);
     [SerializeField] public List<CueData> CuePoints;
+    [NonSerialized] public RectTransform rectTransform;
 
     public void LoadData()
     {
@@ -37,6 +38,9 @@ public class LayerData
          layerPosition = loadedData.layerPosition;
          layerScale = loadedData.layerScale;
          CuePoints = loadedData.CuePoints;
+
+         rectTransform.position = (Vector2)layerPosition;
+         rectTransform.sizeDelta = layerScale;
          
          Debug.LogError($"[LayerData] LoadData : {ToString()}");
     }

@@ -24,6 +24,7 @@ public class LayerManager : MonoBehaviour
     public GameObject TimelineField;
     
     public GameObject LayerPrefab;
+    public GameObject LayerGroupPrefab;
     public GameObject TimelinePrefab;
     public Transform WindowField;
 
@@ -31,6 +32,7 @@ public class LayerManager : MonoBehaviour
 
     public Layer AddLayer<T>(string name, string path) where T : Layer
     {
+        
         var layerObject = Instantiate(LayerPrefab, LayerField.transform);
         var LayerScreen = Instantiate(new GameObject(), RenderField.transform);
 
@@ -46,6 +48,7 @@ public class LayerManager : MonoBehaviour
         else AddedLayer.media = LoadImage(path);
 
         AddedLayer.Data.sourcePath = path;
+        AddedLayer.Data.rectTransform = (RectTransform)AddedLayer.transform;
 
         var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
         var timelineConponent = timeline.GetComponent<Timeline>();
@@ -56,6 +59,22 @@ public class LayerManager : MonoBehaviour
         UIUtility.InitializeUI(AddedLayer);
 
         return AddedLayer;
+    }
+
+    public TimelineGroup AddGroup(string name)
+    {
+        var timeline = Instantiate(TimelinePrefab, TimelineField.transform);
+        var groupLayer = Instantiate(new GameObject(), RenderField.transform);
+
+        timeline.gameObject.name = name;
+        
+        var AddedGroup = timeline.AddComponent<TimelineGroup>();
+        
+        AddedGroup.Canvas = groupLayer.AddComponent<CanvasGroup>();
+        
+        UIUtility.InitializeUI(AddedGroup);
+
+        return AddedGroup;
     }
 
     void OnEnable ()

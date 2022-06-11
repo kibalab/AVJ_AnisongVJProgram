@@ -19,6 +19,8 @@ public class TimelineGroup : Timeline
 
     public GameObject MemberView;
 
+    public CanvasGroup Canvas;
+
     public LayoutElement Blank;
 
     public void ToggleFold() => MemberView.SetActive(!MemberView.activeSelf);
