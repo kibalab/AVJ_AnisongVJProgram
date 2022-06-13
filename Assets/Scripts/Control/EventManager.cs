@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using a;
 using AVJ.Control;
 using AVJ.Settings;
+using AVJ.UIElements;
+using UI;
 using UnityEngine;
 
 public static class EventManager
@@ -11,6 +13,7 @@ public static class EventManager
 
     public static Queue<CueEvent> CueEvents = new Queue<CueEvent>();
 
+    public static UIInputField SoloInputable = null;
     private static IBindableHandler m_BindTarget = null;
 
     public static IBindableHandler BindTarget
