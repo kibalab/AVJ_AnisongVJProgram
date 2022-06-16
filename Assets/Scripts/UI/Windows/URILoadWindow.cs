@@ -39,6 +39,7 @@ namespace AVJ
             formattedUrl = $"https://unity-youtube-dl-server.herokuapp.com/{(formattedUrl.Contains("watch?v=") ? "": "watch?v=")}{formattedUrl}";
             previewPlayer.url = formattedUrl;
             previewPlayer.Play();
+            ButtonText.text = "Loading";
 
             previewPlayer.started += OnPreviewPlayerOnstarted;
         }
