@@ -19366,6 +19366,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sourceTexture: {fileID: 0}
   _alphaSupport: 0
+  _serverTexture: {fileID: 0}
+  _blitMaterial: {fileID: 0}
+  _hasCamera: 1
 --- !u!1 &1367345444
 GameObject:
   m_ObjectHideFlags: 0
@@ -23519,6 +23522,7 @@ MonoBehaviour:
   previewDisplay: {fileID: 2011453546}
   LoadButton: {fileID: 277924163}
   ButtonText: {fileID: 286642092}
+  LayerManager: {fileID: 704457205}
 --- !u!1 &1874070485
 GameObject:
   m_ObjectHideFlags: 0
@@ -23810,7 +23814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spout: {fileID: 1907157637}
-  Syphon: {fileID: 1907157639}
 --- !u!114 &1907157639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23818,13 +23821,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907157634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d59ae4f317f9b4f8b8d64f71768aaea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sourceTexture: {fileID: 0}
   _alphaSupport: 0
+  _serverTexture: {fileID: 0}
+  _blitMaterial: {fileID: 0}
+  _hasCamera: 0
 --- !u!1 &1908254750
 GameObject:
   m_ObjectHideFlags: 0
@@ -25168,7 +25174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
