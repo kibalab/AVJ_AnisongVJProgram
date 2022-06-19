@@ -31,7 +31,7 @@ namespace AVJ
 
         public override void OnUIDrag(IDragDropHandler UIConponent)
         {
-            rectTransform.SetSiblingIndex(0);
+            rectTransform.SetAsLastSibling();
         }
 
         public bool IsFold
