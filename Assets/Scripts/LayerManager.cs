@@ -58,6 +58,8 @@ public class LayerManager : MonoBehaviour
         UIUtility.InitializeUI(timelineConponent);
         UIUtility.InitializeUI(AddedLayer);
 
+        AddedLayer.ParentRatio = 2.856362f;
+
         return AddedLayer;
     }
 
