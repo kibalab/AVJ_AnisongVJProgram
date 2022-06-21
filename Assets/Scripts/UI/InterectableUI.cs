@@ -8,6 +8,7 @@ namespace AVJ.UIElements
     public class InterectableUI : UIBehaviour, IDragDropHandler
     {
         public Graphic UIObject;
+        public float ParentRatio = 1f;
 
         public Collider2D collider;
         
@@ -31,7 +32,7 @@ namespace AVJ.UIElements
                 Debug.Log(value);
                 ((BoxCollider2D)collider).size = value;
                 rectTransform.sizeDelta = value;
-                UIObject.rectTransform.sizeDelta = value;
+                UIObject.rectTransform.sizeDelta = value * ParentRatio;
             }
             get => rectTransform.sizeDelta;
         }
@@ -100,7 +101,7 @@ namespace AVJ.UIElements
             
             if (IsSelected)
             {
-                rectTransform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity + new Vector3(clickedPosition.x, clickedPosition.y, 0);
+                rectTransform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) * MouseSensitivity + new Vector3(clickedPosition.x, clickedPosition.y, 0) * ParentRatio;
                 rectTransform.localPosition -= new Vector3(0, 0, rectTransform.localPosition.z);
             }
         }

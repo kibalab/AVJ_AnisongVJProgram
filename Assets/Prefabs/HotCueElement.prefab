@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 154.66, y: 0}
-  m_SizeDelta: {x: 124.72, y: 0}
+  m_AnchoredPosition: {x: 72.06, y: 0}
+  m_SizeDelta: {x: 69.69, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4635732782685730072
 CanvasRenderer:
@@ -68,10 +68,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 5
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -109,7 +109,7 @@ RectTransform:
   m_GameObject: {fileID: 4635732782707939828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99998754, y: 0.99998754, z: 0.99998754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4635732784185345042}
@@ -118,8 +118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 125.08, y: 8.49}
-  m_SizeDelta: {x: 30.24, y: 16}
+  m_AnchoredPosition: {x: 58.52, y: 5.105}
+  m_SizeDelta: {x: 22.53, y: 10.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4635732782707939827
 CanvasRenderer:
@@ -216,7 +216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30.24, y: 16}
+  m_Size: {x: 22.53, y: 10.21}
   m_EdgeRadius: 0
 --- !u!1 &4635732783534066808
 GameObject:
@@ -336,7 +336,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -18.349255, y: 0}
+  m_Offset: {x: -11.309458, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -347,7 +347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 249.29147, y: 16.98}
+  m_Size: {x: 116.961075, y: 10.21001}
   m_EdgeRadius: 0
 --- !u!1 &4635732784072760023
 GameObject:
@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48, y: 0}
-  m_SizeDelta: {x: 88.61, y: 0}
+  m_AnchoredPosition: {x: 20.46, y: 0}
+  m_SizeDelta: {x: 33.52, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4635732784072760016
 CanvasRenderer:
@@ -417,10 +417,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 5
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 4
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -523,5 +523,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: {x: 0.4, y: -0.4}
   m_UseGraphicAlpha: 1
