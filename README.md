@@ -10,3 +10,8 @@
 A layer control-based VJ program for anime song<br>
 </p><br>
 <br>
+
+## :star: Introdution / 소개
+ - **Spout를 통해 OBS 또는 VJ 프로그램에 송출하기 위한 영상 송출 프로그램입니다.**
+ - **포토샵과 같이**
+<br>
